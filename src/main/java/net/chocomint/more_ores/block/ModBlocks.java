@@ -25,8 +25,7 @@ public class ModBlocks {
 	// General Blocks
 
 	public static final Block STATUS_BLOCK = registerBlock("status_block",
-			new StatusBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f)
-					.breakByTool(FabricToolTags.PICKAXES, 0).requiresTool()));
+			new StatusBlock(FabricBlockSettings.of(Material.STONE)));
 
 	public static final Block TOUGHENED_GLASS = registerBlock("toughened_glass",
 			new GlassBlock(FabricBlockSettings.of(Material.GLASS).strength(15.0f)

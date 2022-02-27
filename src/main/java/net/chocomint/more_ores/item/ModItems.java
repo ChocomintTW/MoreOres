@@ -19,6 +19,10 @@ public class ModItems {
 	// Alloys
 	public static final Item STEEL_INGOT = registerItem("steel_ingot",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+	public static final Item PIERRESITVIA_ALLOY = registerItem("pierresitvia_alloy",
+			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+	public static final Item REINFORCED_CHARGED_QUARTZ = registerItem("reinforced_charged_quartz",
+			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 
 	// Ore ingots
 	public static final Item LEAD_INGOT = registerItem("lead_ingot",
@@ -32,10 +36,6 @@ public class ModItems {
 
 	public static final Item CHARGED_QUARTZ = registerItem("charged_quartz",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
-	public static final Item REINFORCED_CHARGED_QUARTZ = registerItem("reinforced_charged_quartz",
-			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
-	public static final Item PIERRESITVIA_ALLOY = registerItem("pierresitvia_alloy",
-			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 
 
 	public static Item registerItem(String name, Item item) {
@@ -46,7 +46,7 @@ public class ModItems {
 		System.out.println("Registering Mod Items for " + More_Ores.MOD_ID);
 
 		// Tools
-		TitaniumTools.registerTitaniumTools();
+		//TitaniumTools.registerTitaniumTools();
 		SilverTools.registerSilverTools();
 
 		// Armors
