@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#N#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "more_ores:charged_quartz"
+    },
+    "N": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "result": {
+    "item": "more_ores:reinforced_charged_quartz",
+    "count": 1
+  }
+}

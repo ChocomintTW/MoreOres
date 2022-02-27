@@ -1,0 +1,15 @@
+{
+  "type": "more_ores:lightning",
+  "weather": "clear",
+  "ingredients": [
+    {
+      "item": "more_ores:silver_ingot"
+    },
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "output": {
+    "item": "more_ores:silver_hoe"
+  }
+}

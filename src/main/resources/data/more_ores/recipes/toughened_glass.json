@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "OGO",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "more_ores:steel_ingot"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "more_ores:toughened_glass",
+    "count": 1
+  }
+}

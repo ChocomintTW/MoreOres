@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.chocomint.more_ores.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "RecipeManagerMixin"
+  ],
+  "client": [
+    "TestMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

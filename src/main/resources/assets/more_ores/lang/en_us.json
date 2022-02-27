@@ -1,0 +1,53 @@
+{
+  "item.more_ores.position_rod": "Position Rod",
+
+  "block.more_ores.alloy_manufactory": "Alloy Manufactory",
+  "block.more_ores.craft_block": "Craft Block",
+  "block.more_ores.status_block": "Status Block",
+
+  "block.more_ores.toughened_glass": "Toughened Glass",
+
+  "item.more_ores.advanced_coal": "Advanced Coal",
+  "item.more_ores.silver_ingot": "Silver Ingot",
+  "item.more_ores.titanium_ingot": "Titanium Ingot",
+  "item.more_ores.lead_ingot": "Lead Ingot",
+  "item.more_ores.void_gem": "Void Gem",
+  "item.more_ores.steel_ingot": "Steel Ingot",
+  "item.more_ores.charged_quartz": "Charged Quartz",
+  "item.more_ores.reinforced_charged_quartz": "Reinforced Charged Quartz",
+  "item.more_ores.pierresitvia_alloy": "Pierresitvia Alloy",
+
+  "block.more_ores.serpentine": "Serpentine",
+  "block.more_ores.marble": "Marble",
+
+  "item.more_ores.titanium_sword": "Titanium Sword",
+  "item.more_ores.titanium_shovel": "Titanium Shovel",
+  "item.more_ores.titanium_pickaxe": "Titanium Pickaxe",
+  "item.more_ores.titanium_axe": "Titanium Axe",
+  "item.more_ores.titanium_hoe": "Titanium Hoe",
+
+  "item.more_ores.silver_sword": "Silver Sword",
+  "item.more_ores.silver_shovel": "Silver Shovel",
+  "item.more_ores.silver_pickaxe": "Silver Pickaxe",
+  "item.more_ores.silver_axe": "Silver Axe",
+  "item.more_ores.silver_hoe": "Silver Hoe",
+
+  "item.more_ores.lead_sword": "Lead Sword",
+  "item.more_ores.lead_shovel": "Lead Shovel",
+  "item.more_ores.lead_pickaxe": "Lead Pickaxe",
+  "item.more_ores.lead_axe": "Lead Axe",
+  "item.more_ores.lead_hoe": "Lead Hoe",
+
+  "item.more_ores.silver_helmet": "Silver Helmet",
+  "item.more_ores.silver_chestplate": "Silver Chestplate",
+  "item.more_ores.silver_leggings": "Silver Leggings",
+  "item.more_ores.silver_boots": "Silver Boots",
+
+  "block.more_ores.silver_ore": "Silver Ore",
+  "block.more_ores.titanium_ore": "Titanium Ore",
+  "block.more_ores.lead_ore": "Lead Ore",
+  "block.more_ores.void_gem_ore": "Void Gem Ore",
+  "block.more_ores.charged_quartz_ore": "Charged Quartz Ore",
+
+  "itemGroup.more_ores.more_ores": "More Ores"
+}

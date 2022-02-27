@@ -1,0 +1,15 @@
+{
+  "type": "more_ores:alloy_manufacture",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:coal"
+    }
+  ],
+  "lava": 50,
+  "result": {
+    "item": "more_ores:steel_ingot"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "item.more_ores.titanium_ingot": "鈦錠",
+  "item.more_ores.lead_ingot": "鉛錠",
+  "item.more_ores.void_gem": "虛空寶石",
+
+  "block.more_ores.titanium_ore": "鈦礦",
+  "block.more_ores.lead_ore": "鉛礦",
+  "block.more_ores.void_gem_ore": "虛空寶石礦",
+
+  "itemGroup.more_ores.more_ores": "更多礦物"
+}

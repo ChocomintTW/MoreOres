@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "more_ores",
+  "version": "${version}",
+
+  "name": "More Ore",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Chocomint"
+  ],
+  "contact": {
+    "homepage": "https://chocomint.cf/"
+  },
+
+  "license": "MIT",
+  "icon": "assets/more_ores/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.chocomint.more_ores.More_Ores"
+    ],
+    "client": [
+      "net.chocomint.more_ores.ClientMod"
+    ]
+  },
+  "mixins": [
+    "more_ores.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
