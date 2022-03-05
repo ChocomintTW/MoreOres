@@ -6,14 +6,15 @@ import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-public class CraftBlockScreen extends HandledScreen<CraftBlockScreenHandler> {
+public class FillerScreen extends HandledScreen<FillerScreenHandler> {
 	private static final Identifier TEXTURE =
-			new Identifier(More_Ores.MOD_ID, "textures/gui/craft_block_gui.png");
+			new Identifier(More_Ores.MOD_ID, "textures/gui/filler_gui.png");
 
-	public CraftBlockScreen(CraftBlockScreenHandler handler, PlayerInventory inventory, Text title) {
+	public FillerScreen(FillerScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title);
 	}
 
@@ -33,16 +34,11 @@ public class CraftBlockScreen extends HandledScreen<CraftBlockScreenHandler> {
 		int y = (height - backgroundHeight) / 2;
 		drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
-		if(handler.isLightningStorm()) {
-			this.drawTexture(matrices, x + 26, y + 31, 176, 0, 28, 36);
-			// (x, y) is where the "object" will be
-			// (u, v) is where the "object" ACTUALLY located at
-			// (width, height) is the size of the "object"
-		}
+		int lava = (int)Math.round(handler.getLavaAmount() * 49.0 / 20000.0);
+		this.drawTexture(matrices, x + 47, y + 69 - lava, 0, 218 - lava, 81, lava + 1);
 
-		if(handler.isCrafting()) {
-			int progress = handler.getScaledProgress();
-			this.drawTexture(matrices, x + 98, y + 37, 176, 37, progress, 24);
+		if(inZone(mouseX, mouseY, 47, 19, 127, 69)) {
+			renderTooltip(matrices, new LiteralText("lava: " + handler.getLavaAmount()), mouseX, mouseY);
 		}
 	}
 
@@ -51,5 +47,12 @@ public class CraftBlockScreen extends HandledScreen<CraftBlockScreenHandler> {
 		renderBackground(matrices);
 		super.render(matrices, mouseX, mouseY, delta);
 		drawMouseoverTooltip(matrices, mouseX, mouseY);
+	}
+
+	private boolean inRange(int value, int lower, int higher) { return value >= lower && value <= higher; }
+	private boolean inZone(int mouseX, int mouseY, int Start_X, int Start_Y, int End_X, int End_Y) {
+		int x = (width - backgroundWidth) / 2;
+		int y = (height - backgroundHeight) / 2;
+		return inRange(mouseX, x + Start_X, x + End_X) && inRange(mouseY, y + Start_Y, y + End_Y);
 	}
 }

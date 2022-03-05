@@ -2,8 +2,8 @@ package net.chocomint.more_ores.item;
 
 import net.chocomint.more_ores.More_Ores;
 import net.chocomint.more_ores.item.armors.SilverArmors;
+import net.chocomint.more_ores.item.custom.ContainerItem;
 import net.chocomint.more_ores.item.tools.SilverTools;
-import net.chocomint.more_ores.item.tools.TitaniumTools;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -13,16 +13,16 @@ public class ModItems {
 
 	// General Items
 
+	public static final Item LAVA_TANK = registerItem("lava_tank",
+			new ContainerItem(new FabricItemSettings().group(ModItemGroup.MORE_ORES), 20000));
+
 	public static final Item ADVANCED_COAL = registerItem("advanced_coal",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 
-	// Alloys
-	public static final Item STEEL_INGOT = registerItem("steel_ingot",
-			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
-	public static final Item PIERRESITVIA_ALLOY = registerItem("pierresitvia_alloy",
-			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
-	public static final Item REINFORCED_CHARGED_QUARTZ = registerItem("reinforced_charged_quartz",
-			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+	/* Rseyjinecookxem
+	   Tswastandji
+	   Ldivesloupe
+	   Afusternbavo */
 
 	// Ore ingots
 	public static final Item LEAD_INGOT = registerItem("lead_ingot",
@@ -35,6 +35,14 @@ public class ModItems {
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 
 	public static final Item CHARGED_QUARTZ = registerItem("charged_quartz",
+			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+
+	// Alloys
+	public static final Item STEEL_INGOT = registerItem("steel_ingot",
+			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+	public static final Item REINFORCED_CHARGED_QUARTZ = registerItem("reinforced_charged_quartz",
+			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+	public static final Item PIERRESITVIA_ALLOY = registerItem("pierresitvia_alloy",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 
 

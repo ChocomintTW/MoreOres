@@ -2,7 +2,7 @@ package net.chocomint.more_ores.block;
 
 import net.chocomint.more_ores.More_Ores;
 import net.chocomint.more_ores.block.custom.AlloyManufactoryBlock;
-import net.chocomint.more_ores.block.custom.CraftBlock;
+import net.chocomint.more_ores.block.custom.FillerBlock;
 import net.chocomint.more_ores.block.custom.StatusBlock;
 import net.chocomint.more_ores.item.ModItemGroup;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -21,15 +21,6 @@ import net.minecraft.util.registry.Registry;
 import java.util.List;
 
 public class ModBlocks {
-
-	// General Blocks
-
-	public static final Block STATUS_BLOCK = registerBlock("status_block",
-			new StatusBlock(FabricBlockSettings.of(Material.STONE)));
-
-	public static final Block TOUGHENED_GLASS = registerBlock("toughened_glass",
-			new GlassBlock(FabricBlockSettings.of(Material.GLASS).strength(15.0f)
-					.breakByTool(FabricToolTags.PICKAXES, 3).requiresTool().nonOpaque()));
 
 	// Ores
 	public static final Block LEAD_ORE = registerBlock("lead_ore",
@@ -60,9 +51,17 @@ public class ModBlocks {
 	// Machines
 	public static final Block ALLOY_MANUFACTORY = registerBlock("alloy_manufactory",
 			new AlloyManufactoryBlock(FabricBlockSettings.of(Material.METAL)));
-	public static final Block CRAFT_BLOCK = registerBlock("craft_block",
-			new CraftBlock(FabricBlockSettings.of(Material.METAL)));
+	public static final Block FILLER = registerBlock("filler",
+			new FillerBlock(FabricBlockSettings.of(Material.METAL)));
 
+
+	// General Blocks
+
+	public static final Block STATUS_BLOCK = registerBlock("status_block",
+			new StatusBlock(FabricBlockSettings.of(Material.STONE)));
+	public static final Block TOUGHENED_GLASS = registerBlock("toughened_glass",
+			new GlassBlock(FabricBlockSettings.of(Material.GLASS).strength(15.0f)
+					.breakByTool(FabricToolTags.PICKAXES, 3).requiresTool().nonOpaque()));
 
 
 	// Functions

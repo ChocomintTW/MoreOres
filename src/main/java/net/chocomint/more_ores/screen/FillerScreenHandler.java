@@ -9,30 +9,24 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
-import net.minecraft.world.World;
 
-public class CraftBlockScreenHandler extends ScreenHandler {
+public class FillerScreenHandler extends ScreenHandler {
 	private final Inventory inventory;
-	private final World world;
 	private final PropertyDelegate propertyDelegate;
 
-	public CraftBlockScreenHandler(int syncId, PlayerInventory playerInventory) {
-		this(syncId, playerInventory, new SimpleInventory(3), new ArrayPropertyDelegate(2));
+	public FillerScreenHandler(int syncId, PlayerInventory playerInventory) {
+		this(syncId, playerInventory, new SimpleInventory(1), new ArrayPropertyDelegate(1));
 	}
 
-	public CraftBlockScreenHandler(int syncId, PlayerInventory playerInventory,
-	                               Inventory inventory, PropertyDelegate delegate) {
-		super(ModScreenHandlers.CRAFT_BLOCK_SCREEN_HANDLER, syncId);
-		checkSize(inventory, 3);
+	public FillerScreenHandler(int syncId, PlayerInventory playerInventory,
+	                           Inventory inventory, PropertyDelegate delegate) {
+		super(ModScreenHandlers.FILLER_SCREEN_HANDLER, syncId);
+		checkSize(inventory, 1);
 		this.inventory = inventory;
-		this.world = playerInventory.player.world;
 		inventory.onOpen(playerInventory.player);
 		this.propertyDelegate = delegate;
 
-		// Our Slots
-		this.addSlot(new Slot(inventory, 0, 80, 31));
-		this.addSlot(new Slot(inventory, 1, 80, 53));
-		this.addSlot(new Slot(inventory, 2, 123, 42));
+		this.addSlot(new Slot(inventory, 0, 134, 53));
 
 		addPlayerInventory(playerInventory);
 		addPlayerHotbar(playerInventory);
@@ -40,20 +34,8 @@ public class CraftBlockScreenHandler extends ScreenHandler {
 		addProperties(delegate);
 	}
 
-	public boolean isCrafting() {
-		return propertyDelegate.get(0) > 0;
-	}
-
-	public int getScaledProgress() {
-		int progress = this.propertyDelegate.get(0);
-		int maxProgress = this.propertyDelegate.get(1); // Max Progress
-		int progressArrowSize = 21; // This is the width in pixels of your arrow
-
-		return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
-	}
-
-	public boolean isLightningStorm() {
-		return world.isThundering();
+	public int getLavaAmount() {
+		return this.propertyDelegate.get(0);
 	}
 
 	@Override

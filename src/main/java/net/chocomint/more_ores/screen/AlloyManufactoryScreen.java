@@ -43,10 +43,10 @@ public class AlloyManufactoryScreen extends HandledScreen<AlloyManufactoryScreen
 			// (width, height) is the size of the "object"
 		}
 
-		int lava = handler.getLavaAmount() / 100;
-		this.drawTexture(matrices, x + 17, y + 65 - lava, 176, 51 - lava, 12, lava + 1);
+		int lava = (int)Math.ceil(handler.getLavaAmount() * 58.0 / 5000.0);
+		this.drawTexture(matrices, x + 13, y + 68 - lava, 176, 59 - lava, 18, lava + 1);
 
-		if(inRange(mouseX, x + 17, x + 28) && inRange(mouseY, y + 14, y + 65)) {
+		if(inZone(mouseX, mouseY, 13, 9, 30, 68)) {
 			renderTooltip(matrices, new LiteralText("lava: " + handler.getLavaAmount()), mouseX, mouseY);
 		}
 	}
@@ -60,5 +60,10 @@ public class AlloyManufactoryScreen extends HandledScreen<AlloyManufactoryScreen
 
 	private boolean inRange(int value, int lower, int higher) {
 		return value >= lower && value <= higher;
+	}
+	private boolean inZone(int mouseX, int mouseY, int Start_X, int Start_Y, int End_X, int End_Y) {
+		int x = (width - backgroundWidth) / 2;
+		int y = (height - backgroundHeight) / 2;
+		return inRange(mouseX, x + Start_X, x + End_X) && inRange(mouseY, y + Start_Y, y + End_Y);
 	}
 }

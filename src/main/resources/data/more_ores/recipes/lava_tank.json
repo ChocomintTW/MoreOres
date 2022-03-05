@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#R#",
+    "#G#",
+    "#R#"
+  ],
+  "key": {
+    "#": {
+      "item": "more_ores:steel_ingot"
+    },
+    "R": {
+      "item": "more_ores:reinforced_charged_quartz"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "more_ores:lava_tank"
+  }
+}

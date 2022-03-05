@@ -1,8 +1,8 @@
 package net.chocomint.more_ores.block.custom;
 
 import net.chocomint.more_ores.block.entity.AlloyManufactoryBlockEntity;
-import net.chocomint.more_ores.block.entity.CraftBlockEntity;
 import net.chocomint.more_ores.block.entity.ModBlockEntities;
+import net.chocomint.more_ores.item.ModItems;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -13,8 +13,8 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.text.LiteralText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
@@ -48,15 +48,32 @@ public class AlloyManufactoryBlock extends BlockWithEntity implements BlockEntit
 			//a namedScreenHandlerFactory. If your block class does not extend BlockWithEntity, it needs to implement createScreenHandlerFactory.
 			NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
 
-			System.out.println(player.getMainHandStack().getItem());
-			if(player.getMainHandStack().getItem() == Items.LAVA_BUCKET) {
-				AlloyManufactoryBlockEntity blockEntity = (AlloyManufactoryBlockEntity)world.getBlockEntity(pos);
-				player.setStackInHand(Hand.MAIN_HAND, new ItemStack(Items.BUCKET, 1));
-				assert blockEntity != null;
-				blockEntity.setLava(blockEntity.getLava() + 1000);
+			AlloyManufactoryBlockEntity blockEntity = (AlloyManufactoryBlockEntity)world.getBlockEntity(pos);
+
+			if(blockEntity.getLava() <= 4000) {
+				if (player.getMainHandStack().getItem() == Items.LAVA_BUCKET) {
+
+					if (!player.isCreative()) {
+						player.setStackInHand(Hand.MAIN_HAND, new ItemStack(Items.BUCKET, 1));
+					}
+					blockEntity.setLava(blockEntity.getLava() + 1000);
+				}
+				else if (player.getMainHandStack().getItem() == ModItems.LAVA_TANK
+						&& player.getMainHandStack().getOrCreateNbt().getInt("fluid") >= 1000) {
+
+					if (!player.isCreative()) {
+						NbtCompound nbt = player.getMainHandStack().getOrCreateNbt();
+						nbt.putInt("fluid", player.getMainHandStack().getOrCreateNbt().getInt("fluid") - 1000);
+						player.getMainHandStack().setNbt(nbt);
+					}
+					blockEntity.setLava(blockEntity.getLava() + 1000);
+				}
+				else if (screenHandlerFactory != null) {
+					//With this call the server will request the client to open the appropriate Screenhandler
+					player.openHandledScreen(screenHandlerFactory);
+				}
 			}
-			else if (screenHandlerFactory != null) {
-				//With this call the server will request the client to open the appropriate Screenhandler
+			else {
 				player.openHandledScreen(screenHandlerFactory);
 			}
 		}

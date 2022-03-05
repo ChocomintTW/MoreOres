@@ -3,7 +3,7 @@
   "textures": {
     "top": "more_ores:block/bottom",
     "down": "more_ores:block/bottom",
-    "front": "more_ores:block/alloy_manufactory",
-    "side": "more_ores:block/alloy_manufactory"
+    "front": "more_ores:block/filler",
+    "side": "more_ores:block/filler"
   }
 }

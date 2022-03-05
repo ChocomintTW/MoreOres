@@ -1,6 +1,8 @@
 {
+  "item.more_ores.lava_tank": "Lava Tank",
   "item.more_ores.position_rod": "Position Rod",
 
+  "block.more_ores.filler": "Filler",
   "block.more_ores.alloy_manufactory": "Alloy Manufactory",
   "block.more_ores.craft_block": "Craft Block",
   "block.more_ores.status_block": "Status Block",
