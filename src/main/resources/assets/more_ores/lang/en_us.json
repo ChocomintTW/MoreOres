@@ -4,7 +4,6 @@
 
   "block.more_ores.filler": "Filler",
   "block.more_ores.alloy_manufactory": "Alloy Manufactory",
-  "block.more_ores.craft_block": "Craft Block",
   "block.more_ores.status_block": "Status Block",
 
   "block.more_ores.toughened_glass": "Toughened Glass",
@@ -18,6 +17,8 @@
   "item.more_ores.charged_quartz": "Charged Quartz",
   "item.more_ores.reinforced_charged_quartz": "Reinforced Charged Quartz",
   "item.more_ores.pierresitvia_alloy": "Pierresitvia Alloy",
+  "item.more_ores.reinforced_blaze_rod": "Reinforced Blaze Rod",
+  "item.more_ores.glow_blaze_alloy": "Glow Blaze Alloy",
 
   "block.more_ores.serpentine": "Serpentine",
   "block.more_ores.marble": "Marble",
@@ -50,6 +51,15 @@
   "block.more_ores.lead_ore": "Lead Ore",
   "block.more_ores.void_gem_ore": "Void Gem Ore",
   "block.more_ores.charged_quartz_ore": "Charged Quartz Ore",
+
+  "item.minecraft.potion.effect.strengthen_fire_resistance": "Strengthen Fire Resistance Potion",
+  "item.minecraft.splash_potion.effect.strengthen_fire_resistance": "Splash Potion of Strengthen Fire Resistance",
+  "item.minecraft.lingering_potion.effect.strengthen_fire_resistance": "Lingering Potion of Strengthen Fire Resistance",
+  "item.minecraft.potion.effect.freeze": "Freeze Potion",
+  "item.minecraft.splash_potion.effect.freeze": "Splash Potion of Freeze",
+  "item.minecraft.lingering_potion.effect.freeze": "Lingering Potion of Freeze",
+
+  "effect.more_ores.freeze": "Freeze",
 
   "itemGroup.more_ores.more_ores": "More Ores"
 }

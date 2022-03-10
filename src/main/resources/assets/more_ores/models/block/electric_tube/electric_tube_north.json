@@ -1,0 +1,22 @@
+{
+  "credit": "Made with Blockbench",
+  "textures": {
+    "0": "more_ores:block/electric_tube",
+    "particle": "more_ores:block/electric_tube"
+  },
+  "elements": [
+    {
+      "name": "north",
+      "from": [5, 5, 0],
+      "to": [11, 11, 5],
+      "faces": {
+        "north": {"uv": [0, 0, 6, 6], "texture": "#0"},
+        "east": {"uv": [6, 0, 11, 6], "texture": "#0"},
+        "south": {"uv": [0, 0, 6, 6], "texture": "#missing"},
+        "west": {"uv": [5, 0, 10, 6], "texture": "#0"},
+        "up": {"uv": [5, 0, 10, 6], "rotation": 90, "texture": "#0"},
+        "down": {"uv": [5, 0, 10, 6], "rotation": 270, "texture": "#0"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "more_ores:block/electric_tube/electric_tube_center" }
+  }
+}

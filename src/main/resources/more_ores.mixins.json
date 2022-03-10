@@ -4,7 +4,10 @@
   "package": "net.chocomint.more_ores.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "RecipeManagerMixin"
+    "ModEntityDataSaver",
+    "RecipeManagerMixin",
+    "NoiseChunkGeneratorMixin",
+    "BrewingRecipeRegistryMixin"
   ],
   "client": [
     "TestMixin"

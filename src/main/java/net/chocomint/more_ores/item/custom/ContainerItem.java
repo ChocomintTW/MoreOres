@@ -49,7 +49,7 @@ public class ContainerItem extends Item {
 	}
 
 	public boolean isItemBarVisible(ItemStack stack) {
-		return getFluid(stack) < getFluidMax(stack);
+		return true;
 	}
 
 	public int getItemBarStep(ItemStack stack) {

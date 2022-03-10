@@ -1,0 +1,15 @@
+{
+  "type": "more_ores:alloy_manufacture",
+  "ingredients": [
+    {
+      "item": "more_ores:reinforced_blaze_rod"
+    },
+    {
+      "item": "minecraft:glowstone"
+    }
+  ],
+  "lava": 100,
+  "result": {
+    "item": "more_ores:glow_blaze_alloy"
+  }
+}

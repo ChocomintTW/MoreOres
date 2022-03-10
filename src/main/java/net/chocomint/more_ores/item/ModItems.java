@@ -5,8 +5,11 @@ import net.chocomint.more_ores.item.armors.SilverArmors;
 import net.chocomint.more_ores.item.custom.ContainerItem;
 import net.chocomint.more_ores.item.tools.SilverTools;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
 public class ModItems {
@@ -33,7 +36,6 @@ public class ModItems {
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 	public static final Item VOID_GEM = registerItem("void_gem",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
-
 	public static final Item CHARGED_QUARTZ = registerItem("charged_quartz",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 
@@ -43,7 +45,11 @@ public class ModItems {
 	public static final Item REINFORCED_CHARGED_QUARTZ = registerItem("reinforced_charged_quartz",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 	public static final Item PIERRESITVIA_ALLOY = registerItem("pierresitvia_alloy",
-			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES).rarity(Rarity.RARE).fireproof()));
+	public static final Item REINFORCED_BLAZE_ROD = registerItem("reinforced_blaze_rod",
+			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES).fireproof()));
+	public static final Item GLOW_BLAZE_ALLOY = registerItem("glow_blaze_alloy",
+			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES).fireproof()));
 
 
 	public static Item registerItem(String name, Item item) {
@@ -60,5 +66,4 @@ public class ModItems {
 		// Armors
 		SilverArmors.registerSilverArmors();
 	}
-
 }

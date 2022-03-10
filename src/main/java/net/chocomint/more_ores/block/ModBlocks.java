@@ -2,6 +2,7 @@ package net.chocomint.more_ores.block;
 
 import net.chocomint.more_ores.More_Ores;
 import net.chocomint.more_ores.block.custom.AlloyManufactoryBlock;
+import net.chocomint.more_ores.block.custom.ElectricTubeBlock;
 import net.chocomint.more_ores.block.custom.FillerBlock;
 import net.chocomint.more_ores.block.custom.StatusBlock;
 import net.chocomint.more_ores.item.ModItemGroup;
@@ -62,6 +63,8 @@ public class ModBlocks {
 	public static final Block TOUGHENED_GLASS = registerBlock("toughened_glass",
 			new GlassBlock(FabricBlockSettings.of(Material.GLASS).strength(15.0f)
 					.breakByTool(FabricToolTags.PICKAXES, 3).requiresTool().nonOpaque()));
+	public static final Block ELECTRIC_TUBE = registerBlock("electric_tube",
+			new ElectricTubeBlock(FabricBlockSettings.of(Material.METAL)));
 
 
 	// Functions
