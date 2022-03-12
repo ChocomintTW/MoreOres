@@ -13,12 +13,10 @@ import net.minecraft.util.math.BlockPos;
 public class SetPositionCommand {
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher, boolean dedicated) {
 		dispatcher.register(CommandManager.literal("position")
-				.executes(SetPositionCommand::run)
-
 				.then(CommandManager.literal("set")
-				.then(CommandManager.argument("pos_name", StringArgumentType.string()))
+				.then(CommandManager.argument("pos_name", StringArgumentType.string())
 
-				.executes(SetPositionCommand::run)));
+				.executes(SetPositionCommand::run))));
 	}
 
 	public static int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {

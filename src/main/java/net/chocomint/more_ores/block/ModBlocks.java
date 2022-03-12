@@ -33,9 +33,6 @@ public class ModBlocks {
 	public static final Block SILVER_ORE = registerBlock("silver_ore",
 			new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f)
 					.breakByTool(FabricToolTags.PICKAXES, 2).requiresTool()));
-	public static final Block VOID_GEM_ORE = registerBlock("void_gem_ore",
-			new Block(FabricBlockSettings.of(Material.STONE).strength(7.0f)
-					.breakByTool(FabricToolTags.PICKAXES, 4).requiresTool()));
 
 	public static final Block CHARGED_QUARTZ_ORE = registerBlock("charged_quartz_ore",
 			new Block(FabricBlockSettings.of(Material.STONE).strength(12.0f)
@@ -58,8 +55,6 @@ public class ModBlocks {
 
 	// General Blocks
 
-	public static final Block STATUS_BLOCK = registerBlock("status_block",
-			new StatusBlock(FabricBlockSettings.of(Material.STONE)));
 	public static final Block TOUGHENED_GLASS = registerBlock("toughened_glass",
 			new GlassBlock(FabricBlockSettings.of(Material.GLASS).strength(15.0f)
 					.breakByTool(FabricToolTags.PICKAXES, 3).requiresTool().nonOpaque()));

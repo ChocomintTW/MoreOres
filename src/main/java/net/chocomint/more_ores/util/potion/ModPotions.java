@@ -1,7 +1,7 @@
-package net.chocomint.more_ores.potion;
+package net.chocomint.more_ores.util.potion;
 
 import net.chocomint.more_ores.More_Ores;
-import net.chocomint.more_ores.effect.ModEffects;
+import net.chocomint.more_ores.util.effect.ModEffects;
 import net.chocomint.more_ores.item.ModItems;
 import net.chocomint.more_ores.mixin.BrewingRecipeRegistryMixin;
 import net.minecraft.entity.effect.StatusEffectInstance;

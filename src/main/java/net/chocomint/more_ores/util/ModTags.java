@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 public class ModTags {
 
 	public static class Blocks {
-//		public static final Tag<Block> MOD_GLASS = createTag("mod_glass");
+		public static final Tag<Block> CONNECTABLE = createTag("connectable");
 
 		private static Tag<Block> createTag(String name) {
 			return TagFactory.BLOCK.create(new Identifier("c", name));

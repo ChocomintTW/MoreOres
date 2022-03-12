@@ -1,5 +1,57 @@
 {
-  "variants": {
-    "": { "model": "more_ores:block/electric_tube/electric_tube_center" }
-  }
+  "multipart": [
+    {
+      "apply": {
+        "model": "more_ores:block/electric_tube/electric_tube_center"
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "more_ores:block/electric_tube/electric_tube_down"
+      }
+    },
+    {
+      "when": {
+        "top": "true"
+      },
+      "apply": {
+        "model": "more_ores:block/electric_tube/electric_tube_top"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "more_ores:block/electric_tube/electric_tube_north"
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "more_ores:block/electric_tube/electric_tube_east"
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "more_ores:block/electric_tube/electric_tube_south"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "more_ores:block/electric_tube/electric_tube_west"
+      }
+    }
+  ]
 }

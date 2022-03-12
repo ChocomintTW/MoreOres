@@ -9,6 +9,7 @@ public class material {
 	public static final Armor ARMOR_SILVER = new Armor("silver", 16, new int[]{3, 6, 8, 3}, 15, 3.0F, 0.1F);
 
 	public static final ToolDetail TOOL_LEAD_DETAIL = new ToolDetail(new int[]{8, 8, 8, 8, 8}, new int[]{1, 1, 1, 1, 1});
+	public static final ToolDetail TOOL_SILVER_DETAIL = new ToolDetail(new int[]{8, 8, 8, 8, 8}, new int[]{1, 1, 1, 1, 1});
 	public static final ToolDetail TOOL_TITANIUM_DETAIL = new ToolDetail(new int[]{8, 8, 8, 8, 8}, new int[]{1, 1, 1, 1, 1});
 
 

@@ -1,34 +1,17 @@
-package net.chocomint.more_ores.dynamic_recipe;
+package net.chocomint.more_ores.recipe.dynamic;
 
-import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.chocomint.more_ores.More_Ores;
-import net.chocomint.more_ores.item.ModItems;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 import java.util.ArrayList;
 
 public class ModDynamicRecipes {
 
-	public static final JsonObject SILVER_PICKAXE_RECIPE = createPickaxeJson(
-			ModItems.SILVER_INGOT, Items.STICK, More_Ores.MOD_ID + "silver_pickaxe");
-
-	public static JsonObject createPickaxeJson(Item ingot, Item stick, String pickaxe) {
-		return createShapedRecipeJson(
-				Lists.newArrayList('#', '|'), //The keys we are using for the input items/tags.
-				Lists.newArrayList(new Identifier(ingot.toString()), new Identifier(stick.toString())),
-				Lists.newArrayList("item", "item"), //Whether the input we provided is a tag or an item.
-				Lists.newArrayList(
-						"###",
-						" | ",
-						" | "
-				), //The crafting pattern.
-				new Identifier(pickaxe) //The crafting output
-		);
+	public static Identifier toId(Item item) {
+		String[] s = item.getTranslationKey().split("\\.");
+		return new Identifier(s[1] + ":" + s[2]);
 	}
 
 	public static JsonObject createShapedRecipeJson(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output) {
@@ -92,7 +75,4 @@ public class ModDynamicRecipes {
 
 		return json;
 	}
-
-	public static void registerModRecipes() { System.out.println("Registering Mod Recipes for " + More_Ores.MOD_ID); }
-
 }

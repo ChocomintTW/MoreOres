@@ -8,6 +8,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 
 public class FillerScreen extends HandledScreen<FillerScreenHandler> {
@@ -38,7 +39,8 @@ public class FillerScreen extends HandledScreen<FillerScreenHandler> {
 		this.drawTexture(matrices, x + 47, y + 69 - lava, 0, 218 - lava, 81, lava + 1);
 
 		if(inZone(mouseX, mouseY, 47, 19, 127, 69)) {
-			renderTooltip(matrices, new LiteralText("lava: " + handler.getLavaAmount()), mouseX, mouseY);
+			renderTooltip(matrices, new LiteralText(new TranslatableText("fluid.minecraft.lava").getString()
+					+ ": " + handler.getLavaAmount()), mouseX, mouseY);
 		}
 	}
 

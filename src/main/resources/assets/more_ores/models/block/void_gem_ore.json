@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "more_ores:block/void_gem_ore"
-  }
-}

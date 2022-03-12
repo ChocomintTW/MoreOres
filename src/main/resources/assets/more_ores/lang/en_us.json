@@ -4,7 +4,6 @@
 
   "block.more_ores.filler": "Filler",
   "block.more_ores.alloy_manufactory": "Alloy Manufactory",
-  "block.more_ores.status_block": "Status Block",
 
   "block.more_ores.toughened_glass": "Toughened Glass",
 
@@ -12,7 +11,6 @@
   "item.more_ores.silver_ingot": "Silver Ingot",
   "item.more_ores.titanium_ingot": "Titanium Ingot",
   "item.more_ores.lead_ingot": "Lead Ingot",
-  "item.more_ores.void_gem": "Void Gem",
   "item.more_ores.steel_ingot": "Steel Ingot",
   "item.more_ores.charged_quartz": "Charged Quartz",
   "item.more_ores.reinforced_charged_quartz": "Reinforced Charged Quartz",
@@ -49,7 +47,6 @@
   "block.more_ores.silver_ore": "Silver Ore",
   "block.more_ores.titanium_ore": "Titanium Ore",
   "block.more_ores.lead_ore": "Lead Ore",
-  "block.more_ores.void_gem_ore": "Void Gem Ore",
   "block.more_ores.charged_quartz_ore": "Charged Quartz Ore",
 
   "item.minecraft.potion.effect.strengthen_fire_resistance": "Strengthen Fire Resistance Potion",

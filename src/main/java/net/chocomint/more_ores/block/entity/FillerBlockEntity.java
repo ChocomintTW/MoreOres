@@ -19,6 +19,7 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -63,7 +64,7 @@ public class FillerBlockEntity extends BlockEntity implements NamedScreenHandler
 
 	@Override
 	public Text getDisplayName() {
-		return new LiteralText("Filler");
+		return new TranslatableText("block.more_ores.filler");
 	}
 
 	@Nullable

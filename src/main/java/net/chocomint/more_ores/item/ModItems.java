@@ -3,10 +3,7 @@ package net.chocomint.more_ores.item;
 import net.chocomint.more_ores.More_Ores;
 import net.chocomint.more_ores.item.armors.SilverArmors;
 import net.chocomint.more_ores.item.custom.ContainerItem;
-import net.chocomint.more_ores.item.tools.SilverTools;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
@@ -34,8 +31,6 @@ public class ModItems {
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 	public static final Item SILVER_INGOT = registerItem("silver_ingot",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
-	public static final Item VOID_GEM = registerItem("void_gem",
-			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 	public static final Item CHARGED_QUARTZ = registerItem("charged_quartz",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 
@@ -60,8 +55,7 @@ public class ModItems {
 		System.out.println("Registering Mod Items for " + More_Ores.MOD_ID);
 
 		// Tools
-		//TitaniumTools.registerTitaniumTools();
-		SilverTools.registerSilverTools();
+		ModTools.registerModTools();
 
 		// Armors
 		SilverArmors.registerSilverArmors();

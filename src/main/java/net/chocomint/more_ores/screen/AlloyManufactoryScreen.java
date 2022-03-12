@@ -9,6 +9,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 
 public class AlloyManufactoryScreen extends HandledScreen<AlloyManufactoryScreenHandler> {
@@ -47,7 +48,8 @@ public class AlloyManufactoryScreen extends HandledScreen<AlloyManufactoryScreen
 		this.drawTexture(matrices, x + 13, y + 68 - lava, 176, 59 - lava, 18, lava + 1);
 
 		if(inZone(mouseX, mouseY, 13, 9, 30, 68)) {
-			renderTooltip(matrices, new LiteralText("lava: " + handler.getLavaAmount()), mouseX, mouseY);
+			renderTooltip(matrices, new LiteralText(new TranslatableText("fluid.minecraft.lava").getString()
+					+ ": " + handler.getLavaAmount()), mouseX, mouseY);
 		}
 	}
 

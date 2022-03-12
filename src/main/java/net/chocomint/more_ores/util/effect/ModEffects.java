@@ -1,4 +1,4 @@
-package net.chocomint.more_ores.effect;
+package net.chocomint.more_ores.util.effect;
 
 import net.chocomint.more_ores.More_Ores;
 import net.minecraft.entity.effect.StatusEffect;

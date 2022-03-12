@@ -6,16 +6,28 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Optional;
-
 public class ElectricTubeBlock extends BlockWithEntity {
+	// Properties
+	public static final IntProperty POWER = IntProperty.of("power", 0, 10000);
+	public static final BooleanProperty CONNECT_TOP   = BooleanProperty.of("top");
+	public static final BooleanProperty CONNECT_DOWN  = BooleanProperty.of("down");
+	public static final BooleanProperty CONNECT_EAST  = BooleanProperty.of("east");
+	public static final BooleanProperty CONNECT_WEST  = BooleanProperty.of("west");
+	public static final BooleanProperty CONNECT_NORTH = BooleanProperty.of("north");
+	public static final BooleanProperty CONNECT_SOUTH = BooleanProperty.of("south");
+
+	// Voxel Shapes
 	private static final VoxelShape CENTER = Block.createCuboidShape(5D,  5D,  5D,  11D, 11D, 11D);
 	private static final VoxelShape TOP    = Block.createCuboidShape(5D,  11D, 5D,  11D, 16D, 11D);
 	private static final VoxelShape DOWN   = Block.createCuboidShape(5D,  0D,  5D,  11D, 5D,  11D);
@@ -27,6 +39,18 @@ public class ElectricTubeBlock extends BlockWithEntity {
 
 	public ElectricTubeBlock(Settings settings) {
 		super(settings);
+		this.setDefaultState(this.getDefaultState()
+				.with(CONNECT_TOP,   false)
+				.with(CONNECT_DOWN,  false)
+				.with(CONNECT_EAST,  false)
+				.with(CONNECT_WEST,  false)
+				.with(CONNECT_SOUTH, false)
+				.with(CONNECT_NORTH, false));
+	}
+
+	@Override
+	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+		builder.add(CONNECT_TOP, CONNECT_DOWN, CONNECT_EAST, CONNECT_WEST, CONNECT_SOUTH, CONNECT_NORTH);
 	}
 
 	@Override
@@ -36,17 +60,12 @@ public class ElectricTubeBlock extends BlockWithEntity {
 
 	@Override
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-		Optional<ElectricTubeBlockEntity> blockEntity = world.getBlockEntity(pos, ModBlockEntities.ELECTRIC_TUBE_BLOCK_ENTITY);
-		if(blockEntity.isPresent()) {
-			boolean[] connect = blockEntity.get().getConnect();
-			return VoxelShapes.union(CENTER, connect[0] ? WEST  : EMPTY
-										   , connect[1] ? EAST  : EMPTY
-										   , connect[2] ? DOWN  : EMPTY
-										   , connect[3] ? TOP   : EMPTY
-										   , connect[4] ? NORTH : EMPTY
-										   , connect[5] ? SOUTH : EMPTY);
-		}
-		return CENTER;
+		return VoxelShapes.union(CENTER, state.get(CONNECT_TOP)   ? TOP   : EMPTY
+									   , state.get(CONNECT_DOWN)  ? DOWN  : EMPTY
+									   , state.get(CONNECT_EAST)  ? EAST  : EMPTY
+									   , state.get(CONNECT_WEST)  ? WEST  : EMPTY
+									   , state.get(CONNECT_NORTH) ? NORTH : EMPTY
+									   , state.get(CONNECT_SOUTH) ? SOUTH : EMPTY);
 	}
 
 	@Nullable
@@ -59,5 +78,24 @@ public class ElectricTubeBlock extends BlockWithEntity {
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
 		return checkType(type, ModBlockEntities.ELECTRIC_TUBE_BLOCK_ENTITY, ElectricTubeBlockEntity::tick);
+	}
+
+	public enum direction {
+		top  (0, 1, 0 ),
+		down (0, -1,0 ),
+		east (1, 0, 0 ),
+		west (-1,0, 0 ),
+		north(0, 0, -1),
+		south(0, 0, 1 );
+
+		private final Vec3i relative_pos;
+
+		direction(int x, int y, int z) {
+			this.relative_pos = new Vec3i(x, y, z);
+		}
+
+		public Vec3i getRelativePos() {
+			return relative_pos;
+		}
 	}
 }

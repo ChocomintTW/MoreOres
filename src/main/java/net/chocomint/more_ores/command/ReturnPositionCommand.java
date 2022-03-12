@@ -13,9 +13,9 @@ public class ReturnPositionCommand {
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher, boolean dedicated) {
 		dispatcher.register(CommandManager.literal("position")
 				.then(CommandManager.literal("return")
-				.then(CommandManager.argument("pos_name", StringArgumentType.greedyString()))
+				.then(CommandManager.argument("pos_name", StringArgumentType.greedyString())
 
-				.executes(ReturnPositionCommand::run)));
+				.executes(ReturnPositionCommand::run))));
 	}
 
 	private static int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
