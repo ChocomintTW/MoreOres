@@ -1,5 +1,6 @@
 package net.chocomint.more_ores;
 
+import net.chocomint.more_ores.screen.ATMScreen;
 import net.chocomint.more_ores.screen.AlloyManufactoryScreen;
 import net.chocomint.more_ores.screen.FillerScreen;
 import net.chocomint.more_ores.screen.ModScreenHandlers;
@@ -15,5 +16,6 @@ public class ClientMod implements ClientModInitializer {
 		System.out.println("Client Mod!");
 		ScreenRegistry.register(ModScreenHandlers.ALLOY_MANUFACTORY_SCREEN_HANDLER, AlloyManufactoryScreen::new);
 		ScreenRegistry.register(ModScreenHandlers.FILLER_SCREEN_HANDLER, FillerScreen::new);
+		ScreenRegistry.register(ModScreenHandlers.ATM_SCREEN_HANDLER, ATMScreen::new);
 	}
 }

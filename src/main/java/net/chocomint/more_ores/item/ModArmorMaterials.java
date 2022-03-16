@@ -10,9 +10,7 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-	SILVER(material.ARMOR_SILVER, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, () -> {
-		return Ingredient.ofItems(ModItems.SILVER_INGOT);
-	});
+	SILVER(material.ARMOR_SILVER, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, () -> Ingredient.ofItems(ModItems.SILVER_INGOT));
 
 	private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
 	private final String name;

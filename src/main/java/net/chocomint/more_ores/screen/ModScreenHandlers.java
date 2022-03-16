@@ -10,4 +10,6 @@ public class ModScreenHandlers {
 			ScreenHandlerRegistry.registerSimple(new Identifier(More_Ores.MOD_ID, "alloy_manufactory"), AlloyManufactoryScreenHandler::new);
 	public static ScreenHandlerType<FillerScreenHandler> FILLER_SCREEN_HANDLER =
 			ScreenHandlerRegistry.registerSimple(new Identifier(More_Ores.MOD_ID, "filler"), FillerScreenHandler::new);
+	public static ScreenHandlerType<ATMScreenHandler> ATM_SCREEN_HANDLER =
+			ScreenHandlerRegistry.registerSimple(new Identifier(More_Ores.MOD_ID, "atm"), ATMScreenHandler::new);
 }

@@ -8,13 +8,16 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
-public class FillerScreen extends HandledScreen<FillerScreenHandler> {
-	private static final Identifier TEXTURE = new Identifier(More_Ores.MOD_ID, "textures/gui/filler_gui.png");
+import static net.chocomint.more_ores.block.custom.ATMBlock.*;
 
-	public FillerScreen(FillerScreenHandler handler, PlayerInventory inventory, Text title) {
+public class ATMScreen extends HandledScreen<ATMScreenHandler> {
+	private static final Identifier TEXTURE = new Identifier(More_Ores.MOD_ID, "textures/gui/atm_gui.png");
+//	private static final Identifier CARD_SLOT = new Identifier(More_Ores.MOD_ID, "textures/gui/slot/right_slot.png");
+
+	public ATMScreen(ATMScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title);
 	}
 
@@ -29,18 +32,27 @@ public class FillerScreen extends HandledScreen<FillerScreenHandler> {
 	protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-		RenderSystem.setShaderTexture(0, TEXTURE);
+
 		int x = (width - backgroundWidth) / 2;
 		int y = (height - backgroundHeight) / 2;
-		drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
+		TextureRenderer TextureRenderer = (texture, relateX, relateY, u, v, w, h) -> {
+			RenderSystem.setShaderTexture(0, texture);
+			drawTexture(matrices, x + relateX, y + relateY, u, v, w, h);
+		};
 
-		int lava = (int)Math.round(handler.getLavaAmount() * 49.0 / 20000.0);
-		this.drawTexture(matrices, x + 47, y + 69 - lava, 0, 218 - lava, 81, lava + 1);
+		TextureRenderer.draw(TEXTURE, 0, 0, 0, 0, backgroundWidth, backgroundHeight);
 
-		if(inZone(mouseX, mouseY, 47, 19, 127, 69)) {
-			renderTooltip(matrices, new LiteralText(new TranslatableText("block.minecraft.lava").getString()
-					+ ": " + handler.getLavaAmount()), mouseX, mouseY);
-		}
+		TextRenderer TextRenderer = (text, relateX, relateY) -> textRenderer.draw(matrices, text, x + relateX, y + relateY, 0);
+		TextRenderer.draw(new LiteralText("Welcome! ").append(new LiteralText(PLAYER).formatted(Formatting.ITALIC, Formatting.BLUE)), 8, 18);
+		TextRenderer.draw(new LiteralText("Rank: ").append(CARD.getText()), 8, 28);
+		TextRenderer.draw(new LiteralText("$" + COIN).formatted(Formatting.YELLOW), 8, 38);
+	}
+
+	interface TextureRenderer {
+		void draw(Identifier texture, int relateX, int relateY, int u, int v, int w, int h);
+	}
+	interface TextRenderer {
+		void draw(Text text, int relateX, int relateY);
 	}
 
 	@Override

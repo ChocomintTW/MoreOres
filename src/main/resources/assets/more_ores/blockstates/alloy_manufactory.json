@@ -1,5 +1,19 @@
 {
   "variants": {
-    "": { "model": "more_ores:block/alloy_manufactory" }
+    "facing=north": {
+      "model": "more_ores:block/alloy_manufactory"
+    },
+    "facing=south": {
+      "model": "more_ores:block/alloy_manufactory",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "more_ores:block/alloy_manufactory",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "more_ores:block/alloy_manufactory",
+      "y": 270
+    }
   }
 }

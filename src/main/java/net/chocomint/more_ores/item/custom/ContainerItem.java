@@ -29,15 +29,6 @@ public class ContainerItem extends Item {
 
 		tooltip.add(new LiteralText(getFluid(stack) + ""));
 
-		super.appendTooltip(stack, world, tooltip, context);
-	}
-
-	@Override
-	public void onCraft(ItemStack stack, World world, PlayerEntity player) {
-		super.onCraft(stack, world, player);
-		NbtCompound nbt = stack.getOrCreateNbt();
-		nbt.putInt("fluid", 0);
-		stack.setNbt(nbt);
 	}
 
 	public static int getFluid(ItemStack stack) {

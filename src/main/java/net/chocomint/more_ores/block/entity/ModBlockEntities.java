@@ -15,6 +15,9 @@ public class ModBlockEntities {
 	public static BlockEntityType<FillerBlockEntity> FILLER_BLOCK_ENTITY =
 			Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(More_Ores.MOD_ID, "filler_block_entity"),
 					FabricBlockEntityTypeBuilder.create(FillerBlockEntity::new, ModBlocks.FILLER).build(null));
+	public static BlockEntityType<ATMBlockEntity> ATM_BLOCK_ENTITY =
+			Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(More_Ores.MOD_ID, "atm_block_entity"),
+					FabricBlockEntityTypeBuilder.create(ATMBlockEntity::new, ModBlocks.ATM).build(null));
 
 	// Another
 	public static BlockEntityType<ElectricTubeBlockEntity> ELECTRIC_TUBE_BLOCK_ENTITY =

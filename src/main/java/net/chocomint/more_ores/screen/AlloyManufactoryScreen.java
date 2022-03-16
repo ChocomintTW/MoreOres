@@ -13,8 +13,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 
 public class AlloyManufactoryScreen extends HandledScreen<AlloyManufactoryScreenHandler> {
-	private static final Identifier TEXTURE =
-			new Identifier(More_Ores.MOD_ID, "textures/gui/alloy_manufactory_gui.png");
+	private static final Identifier TEXTURE = new Identifier(More_Ores.MOD_ID, "textures/gui/alloy_manufactory_gui.png");
 
 	public AlloyManufactoryScreen(AlloyManufactoryScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title);
@@ -48,7 +47,7 @@ public class AlloyManufactoryScreen extends HandledScreen<AlloyManufactoryScreen
 		this.drawTexture(matrices, x + 13, y + 68 - lava, 176, 59 - lava, 18, lava + 1);
 
 		if(inZone(mouseX, mouseY, 13, 9, 30, 68)) {
-			renderTooltip(matrices, new LiteralText(new TranslatableText("fluid.minecraft.lava").getString()
+			renderTooltip(matrices, new LiteralText(new TranslatableText("block.minecraft.lava").getString()
 					+ ": " + handler.getLavaAmount()), mouseX, mouseY);
 		}
 	}

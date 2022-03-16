@@ -7,5 +7,11 @@
   "block.more_ores.lead_ore": "鉛礦",
   "block.more_ores.void_gem_ore": "虛空寶石礦",
 
+
+  "credit_card.rank.standard": "一般會員",
+  "credit_card.rank.gold": "黃金會員",
+  "credit_card.rank.platinum": "白金會員",
+  "credit_card.rank.diamond": "鑽石會員",
+
   "itemGroup.more_ores.more_ores": "更多礦物"
 }

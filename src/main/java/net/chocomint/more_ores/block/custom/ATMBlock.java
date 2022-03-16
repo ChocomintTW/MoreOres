@@ -1,8 +1,9 @@
 package net.chocomint.more_ores.block.custom;
 
-import net.chocomint.more_ores.block.entity.AlloyManufactoryBlockEntity;
+import net.chocomint.more_ores.block.entity.ATMBlockEntity;
 import net.chocomint.more_ores.block.entity.ModBlockEntities;
 import net.chocomint.more_ores.item.ModItems;
+import net.chocomint.more_ores.item.custom.CreditCardItem;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -10,36 +11,51 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class AlloyManufactoryBlock extends BlockWithEntity implements BlockEntityProvider {
+import java.util.Objects;
+
+import static net.chocomint.more_ores.item.custom.CreditCardItem.*;
+
+public class ATMBlock extends BlockWithEntity implements BlockEntityProvider {
 	public static final DirectionProperty FACING = DirectionProperty.of("facing");
 
-	public AlloyManufactoryBlock(Settings settings) {
+	public static String PLAYER;
+	public static CardRank CARD;
+	public static int COIN;
+
+	public ATMBlock(Settings settings) {
 		super(settings);
 	}
 
 	@Nullable
 	@Override
 	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-		return new AlloyManufactoryBlockEntity(pos, state);
+		return new ATMBlockEntity(pos, state);
 	}
 
 	@Override
 	public BlockRenderType getRenderType(BlockState state) {
 		//With inheriting from BlockWithEntity this defaults to INVISIBLE, so we need to change that!
 		return BlockRenderType.MODEL;
+	}
+
+	@Override
+	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+		return Block.createCuboidShape(0, 0, 0, 16, 32, 16);
 	}
 
 	@Override
@@ -54,51 +70,47 @@ public class AlloyManufactoryBlock extends BlockWithEntity implements BlockEntit
 
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-		if (!world.isClient) {
-			//This will call the createScreenHandlerFactory method from BlockWithEntity, which will return our blockEntity casted to
-			//a namedScreenHandlerFactory. If your block class does not extend BlockWithEntity, it needs to implement createScreenHandlerFactory.
+		if(!world.isClient()) {
 			NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
 
-			AlloyManufactoryBlockEntity blockEntity = (AlloyManufactoryBlockEntity)world.getBlockEntity(pos);
+			ItemStack stack = player.getMainHandStack();
 
-			if(blockEntity.getLava() <= 4000) {
-				if (player.getMainHandStack().getItem() == Items.LAVA_BUCKET) {
+			if(hand == Hand.MAIN_HAND && stack.getItem() == ModItems.CREDIT_CARD) {
+				if(Objects.equals(stack.getOrCreateNbt().getString("ownerId"), "")) {
+					player.sendMessage(new TranslatableText("message.credit_card.register_owner"), false);
 
-					if (!player.isCreative()) {
-						player.setStackInHand(Hand.MAIN_HAND, new ItemStack(Items.BUCKET, 1));
-					}
-					blockEntity.setLava(blockEntity.getLava() + 1000);
+					NbtCompound nbt = stack.getOrCreateNbt();
+					nbt.putString("ownerId", player.getName().getString());
+					stack.setNbt(nbt);
 				}
-				else if (player.getMainHandStack().getItem() == ModItems.LAVA_TANK
-						&& player.getMainHandStack().getOrCreateNbt().getInt("fluid") >= 1000) {
+				else {
+					if(Objects.equals(player.getName().getString(), stack.getOrCreateNbt().getString("ownerId"))) {
+						player.openHandledScreen(screenHandlerFactory);
 
-					if (!player.isCreative()) {
-						NbtCompound nbt = player.getMainHandStack().getOrCreateNbt();
-						nbt.putInt("fluid", player.getMainHandStack().getOrCreateNbt().getInt("fluid") - 1000);
-						player.getMainHandStack().setNbt(nbt);
+						PLAYER = player.getName().getString();
+						CARD = CardRank.values()[getCardRankOrder(stack)];
+						COIN = getCoin(stack);
 					}
-					blockEntity.setLava(blockEntity.getLava() + 1000);
-				}
-				else if (screenHandlerFactory != null) {
-					//With this call the server will request the client to open the appropriate Screenhandler
-					player.openHandledScreen(screenHandlerFactory);
+					else {
+						player.sendMessage(new TranslatableText("message.credit_card.has_owner",
+								stack.getOrCreateNbt().getString("ownerId")), false);
+					}
 				}
 			}
 			else {
-				player.openHandledScreen(screenHandlerFactory);
+				player.sendMessage(new TranslatableText("message.credit_card.no_card"), false);
 			}
 		}
+
 		return ActionResult.SUCCESS;
 	}
 
-
-	//This method will drop all items onto the ground when the block is broken
 	@Override
 	public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof AlloyManufactoryBlockEntity) {
-				ItemScatterer.spawn(world, pos, (AlloyManufactoryBlockEntity)blockEntity);
+			if (blockEntity instanceof ATMBlockEntity) {
+				ItemScatterer.spawn(world, pos, (ATMBlockEntity)blockEntity);
 				// update comparators
 				world.updateComparators(pos,this);
 			}
@@ -109,6 +121,6 @@ public class AlloyManufactoryBlock extends BlockWithEntity implements BlockEntit
 	@Nullable
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-		return checkType(type, ModBlockEntities.ALLOY_MANUFACTORY_BLOCK_ENTITY, AlloyManufactoryBlockEntity::tick);
+		return checkType(type, ModBlockEntities.ATM_BLOCK_ENTITY, ATMBlockEntity::tick);
 	}
 }

@@ -1,9 +1,27 @@
 {
   "parent": "block/orientable",
+  "credit": "Made with Blockbench",
   "textures": {
-    "top": "more_ores:block/bottom",
-    "down": "more_ores:block/bottom",
-    "front": "more_ores:block/alloy_manufactory",
-    "side": "more_ores:block/alloy_manufactory"
-  }
+    "0": "more_ores:block/alloy_manufactory/back",
+    "1": "more_ores:block/alloy_manufactory/bottom",
+    "2": "more_ores:block/alloy_manufactory/front",
+    "3": "more_ores:block/alloy_manufactory/left",
+    "4": "more_ores:block/alloy_manufactory/right",
+    "5": "more_ores:block/alloy_manufactory/top",
+    "particle": "more_ores:block/alloy_manufactory/back"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#2"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#4"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#3"},
+        "up": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#5"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#1"}
+      }
+    }
+  ]
 }

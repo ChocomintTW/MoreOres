@@ -1,0 +1,122 @@
+{
+  "parent": "minecraft:block/orientable",
+  "credit": "Made with Blockbench",
+  "textures": {
+    "0": "more_ores:block/atm",
+    "particle": "more_ores:block/atm"
+  },
+  "elements": [
+    {
+      "name": "base",
+      "from": [1, 0, 1],
+      "to": [15, 16, 15],
+      "faces": {
+        "north": {"uv": [0, 0, 4.25, 4.25], "texture": "#0"},
+        "east": {"uv": [0, 0, 4.25, 4.25], "texture": "#missing"},
+        "south": {"uv": [0, 0, 4.25, 4.25], "texture": "#missing"},
+        "west": {"uv": [0, 0, 4.25, 4.25], "texture": "#missing"},
+        "up": {"uv": [0, 0, 4.25, 4.25], "texture": "#0"},
+        "down": {"uv": [0, 0, 4.25, 4.25], "texture": "#0"}
+      }
+    },
+    {
+      "name": "top",
+      "from": [1, 29.8, 1],
+      "to": [15, 32, 15],
+      "faces": {
+        "north": {"uv": [8.5, 0, 12, 0.5], "texture": "#0"},
+        "east": {"uv": [0, 0, 13, 2.2], "texture": "#missing"},
+        "south": {"uv": [0, 0, 14, 2.2], "texture": "#missing"},
+        "west": {"uv": [0, 0, 13, 2.2], "texture": "#missing"},
+        "up": {"uv": [0, 0, 4.25, 4.25], "texture": "#0"},
+        "down": {"uv": [8.5, 5.25, 12, 7], "texture": "#0"}
+      }
+    },
+    {
+      "name": "keyboard",
+      "from": [1, 13.5, 8],
+      "to": [15, 14.5, 14],
+      "rotation": {"angle": -22.5, "axis": "x", "origin": [0, 0, 0]},
+      "faces": {
+        "north": {"uv": [8.5, 2, 12, 2.25], "texture": "#0"},
+        "east": {"uv": [0, 0, 6, 1], "texture": "#missing"},
+        "south": {"uv": [0, 0, 14, 1], "texture": "#missing"},
+        "west": {"uv": [0, 0, 6, 1], "texture": "#missing"},
+        "up": {"uv": [8.5, 0.5, 12, 2.25], "rotation": 180, "texture": "#0"},
+        "down": {"uv": [0, 0, 14, 6], "texture": "#missing"}
+      }
+    },
+    {
+      "name": "screen",
+      "from": [1, 20, -0.5],
+      "to": [15, 32, 0.5],
+      "rotation": {"angle": 22.5, "axis": "x", "origin": [0, 0, 0]},
+      "faces": {
+        "north": {"uv": [8.5, 2.25, 12, 5.75], "rotation": 180, "texture": "#0"},
+        "east": {"uv": [0, 0, 12, 1], "rotation": 90, "texture": "#missing"},
+        "south": {"uv": [0, 0, 14, 12], "texture": "#missing"},
+        "west": {"uv": [0, 0, 12, 1], "rotation": 270, "texture": "#missing"},
+        "up": {"uv": [0, 0, 14, 1], "texture": "#missing"},
+        "down": {"uv": [0, 0, 14, 1], "rotation": 180, "texture": "#missing"}
+      }
+    },
+    {
+      "name": "back_plate",
+      "from": [1, 0, 15],
+      "to": [15, 32, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 14, 16], "texture": "#missing"},
+        "east": {"uv": [0, 0, 1, 16], "texture": "#missing"},
+        "south": {"uv": [4.5, 0, 8.25, 8.25], "texture": "#0"},
+        "west": {"uv": [0, 0, 1, 16], "texture": "#missing"},
+        "up": {"uv": [4.25, 0, 4.5, 8.25], "rotation": 270, "texture": "#0"},
+        "down": {"uv": [4.25, 0, 4.5, 6.25], "rotation": 90, "texture": "#0"}
+      }
+    },
+    {
+      "name": "base",
+      "from": [0, 0, 0],
+      "to": [1, 32, 16],
+      "faces": {
+        "north": {"uv": [4.25, 0, 4.5, 8.25], "texture": "#0"},
+        "east": {"uv": [4.25, 0, 8.5, 8.25], "texture": "#0"},
+        "south": {"uv": [4.25, 0, 4.5, 8.25], "texture": "#0"},
+        "west": {"uv": [4.25, 0, 8.5, 8.25], "texture": "#0"},
+        "up": {"uv": [4.25, 0, 4.5, 8.25], "texture": "#0"},
+        "down": {"uv": [4.25, 0, 4.5, 6.25], "texture": "#0"}
+      }
+    },
+    {
+      "name": "base",
+      "from": [15, 0, 0],
+      "to": [16, 32, 16],
+      "faces": {
+        "north": {"uv": [4.25, 0, 4.5, 8.25], "texture": "#0"},
+        "east": {"uv": [4.25, 0, 8.5, 8.25], "texture": "#0"},
+        "south": {"uv": [4.25, 0, 4.5, 8.25], "texture": "#0"},
+        "west": {"uv": [4.25, 0, 8.5, 8.25], "texture": "#0"},
+        "up": {"uv": [4.25, 0, 4.5, 8.25], "texture": "#0"},
+        "down": {"uv": [4.25, 0, 4.5, 6.25], "texture": "#0"}
+      }
+    }
+  ],
+  "groups": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    {
+      "name": "right_plates",
+      "origin": [0, 0, 0],
+      "color": 0,
+      "children": [5, 6]
+    },
+    {
+      "name": "left_plates",
+      "origin": [0, 0, 0],
+      "color": 0,
+      "children": [6, 7]
+    }
+  ]
+}

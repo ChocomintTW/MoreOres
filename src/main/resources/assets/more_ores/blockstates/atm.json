@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "more_ores:block/atm"
+    },
+    "facing=south": {
+      "model": "more_ores:block/atm",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "more_ores:block/atm",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "more_ores:block/atm",
+      "y": 270
+    }
+  }
+}

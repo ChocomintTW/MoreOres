@@ -1,10 +1,7 @@
 package net.chocomint.more_ores.block;
 
 import net.chocomint.more_ores.More_Ores;
-import net.chocomint.more_ores.block.custom.AlloyManufactoryBlock;
-import net.chocomint.more_ores.block.custom.ElectricTubeBlock;
-import net.chocomint.more_ores.block.custom.FillerBlock;
-import net.chocomint.more_ores.block.custom.StatusBlock;
+import net.chocomint.more_ores.block.custom.*;
 import net.chocomint.more_ores.item.ModItemGroup;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -51,6 +48,8 @@ public class ModBlocks {
 			new AlloyManufactoryBlock(FabricBlockSettings.of(Material.METAL)));
 	public static final Block FILLER = registerBlock("filler",
 			new FillerBlock(FabricBlockSettings.of(Material.METAL)));
+	public static final Block ATM = registerBlock("atm",
+			new ATMBlock(FabricBlockSettings.of(Material.METAL)));
 
 
 	// General Blocks

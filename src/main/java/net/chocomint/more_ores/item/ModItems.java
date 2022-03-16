@@ -3,6 +3,7 @@ package net.chocomint.more_ores.item;
 import net.chocomint.more_ores.More_Ores;
 import net.chocomint.more_ores.item.armors.SilverArmors;
 import net.chocomint.more_ores.item.custom.ContainerItem;
+import net.chocomint.more_ores.item.custom.CreditCardItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -12,10 +13,10 @@ import net.minecraft.util.registry.Registry;
 public class ModItems {
 
 	// General Items
-
 	public static final Item LAVA_TANK = registerItem("lava_tank",
 			new ContainerItem(new FabricItemSettings().group(ModItemGroup.MORE_ORES), 20000));
-
+	public static final Item CREDIT_CARD = registerItem("credit_card",
+			new CreditCardItem(new FabricItemSettings().group(ModItemGroup.MORE_ORES).maxCount(1).fireproof()));
 	public static final Item ADVANCED_COAL = registerItem("advanced_coal",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 
