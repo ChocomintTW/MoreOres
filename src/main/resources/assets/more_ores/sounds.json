@@ -1,0 +1,10 @@
+{
+  "lemon": {
+    "sounds": [
+      {
+        "name": "more_ores:lemon",
+        "stream": true
+      }
+    ]
+  }
+}

@@ -18,6 +18,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import static net.chocomint.more_ores.block.custom.ATMBlock.COST;
+import static net.chocomint.more_ores.util.atm.ATMCostJsonSerializer.COST_LIST;
+
 public class ATMBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
 
 	private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
@@ -55,5 +58,12 @@ public class ATMBlockEntity extends BlockEntity implements NamedScreenHandlerFac
 	}
 
 	public static void tick(World world, BlockPos pos, BlockState state, ATMBlockEntity entity) {
+		COST = COST_LIST.getOrDefault(ItemToKey(entity.getItems().get(0)), -1);
+	}
+
+	private static String ItemToKey(ItemStack item) {
+		String[] s = item.getTranslationKey().split("\\.");
+		int l = s.length;
+		return s[l - 2] + ":" + s[l - 1];
 	}
 }

@@ -10,7 +10,6 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
@@ -33,7 +32,7 @@ public class ElectricTubeBlock extends BlockWithEntity {
 	private static final VoxelShape DOWN   = Block.createCuboidShape(5D,  0D,  5D,  11D, 5D,  11D);
 	private static final VoxelShape EAST   = Block.createCuboidShape(11D, 5D,  5D,  16D, 11D, 11D);
 	private static final VoxelShape WEST   = Block.createCuboidShape(0D,  5D,  5D,  5D,  11D, 11D);
-	private static final VoxelShape NORTH  = Block.createCuboidShape(5D,  5D,  0D,  11D, 11D, 5D);
+	private static final VoxelShape NORTH  = Block.createCuboidShape(5D,  5D,  0D,  11D, 11D, 5D );
 	private static final VoxelShape SOUTH  = Block.createCuboidShape(5D,  5D,  11D, 11D, 11D, 16D);
 	private static final VoxelShape EMPTY  = Block.createCuboidShape(0,0,0,0,0,0);
 
@@ -78,24 +77,5 @@ public class ElectricTubeBlock extends BlockWithEntity {
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
 		return checkType(type, ModBlockEntities.ELECTRIC_TUBE_BLOCK_ENTITY, ElectricTubeBlockEntity::tick);
-	}
-
-	public enum direction {
-		top  (0, 1, 0 ),
-		down (0, -1,0 ),
-		east (1, 0, 0 ),
-		west (-1,0, 0 ),
-		north(0, 0, -1),
-		south(0, 0, 1 );
-
-		private final Vec3i relative_pos;
-
-		direction(int x, int y, int z) {
-			this.relative_pos = new Vec3i(x, y, z);
-		}
-
-		public Vec3i getRelativePos() {
-			return relative_pos;
-		}
 	}
 }

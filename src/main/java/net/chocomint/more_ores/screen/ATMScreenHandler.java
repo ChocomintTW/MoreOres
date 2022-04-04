@@ -1,5 +1,7 @@
 package net.chocomint.more_ores.screen;
 
+import net.chocomint.more_ores.item.ModItems;
+import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -23,7 +25,7 @@ public class ATMScreenHandler extends ScreenHandler {
 		this.inventory = inventory;
 		inventory.onOpen(playerInventory.player);
 
-//		this.addSlot(new Slot(inventory, 0, 180, 9));
+		this.addSlot(new Slot(inventory, 0, 8, 51));
 
 		addPlayerInventory(playerInventory);
 		addPlayerHotbar(playerInventory);

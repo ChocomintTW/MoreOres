@@ -21,14 +21,12 @@ import java.util.List;
 public class ContainerItem extends Item {
 
 	public ContainerItem(Settings settings, int fluid_max) {
-		super(settings);
+		super(settings.maxCount(1));
 	}
 
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-
 		tooltip.add(new LiteralText(getFluid(stack) + ""));
-
 	}
 
 	public static int getFluid(ItemStack stack) {

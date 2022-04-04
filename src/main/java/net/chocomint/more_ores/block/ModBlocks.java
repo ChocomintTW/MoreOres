@@ -6,7 +6,6 @@ import net.chocomint.more_ores.item.ModItemGroup;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.GlassBlock;
 import net.minecraft.block.Material;
@@ -22,26 +21,20 @@ public class ModBlocks {
 
 	// Ores
 	public static final Block LEAD_ORE = registerBlock("lead_ore",
-			new Block(FabricBlockSettings.of(Material.STONE).strength(2.5f)
-					.breakByTool(FabricToolTags.PICKAXES, 2).requiresTool()));
+			new Block(FabricBlockSettings.of(Material.STONE).strength(2.5f).requiresTool()));
 	public static final Block TITANIUM_ORE = registerBlock("titanium_ore",
-			new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f)
-					.breakByTool(FabricToolTags.PICKAXES, 2).requiresTool()));
+			new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).requiresTool()));
 	public static final Block SILVER_ORE = registerBlock("silver_ore",
-			new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f)
-					.breakByTool(FabricToolTags.PICKAXES, 2).requiresTool()));
+			new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).requiresTool()));
 
 	public static final Block CHARGED_QUARTZ_ORE = registerBlock("charged_quartz_ore",
-			new Block(FabricBlockSettings.of(Material.STONE).strength(12.0f)
-					.breakByTool(FabricToolTags.PICKAXES, 4).requiresTool()));
+			new Block(FabricBlockSettings.of(Material.STONE).strength(12.0f).requiresTool()));
 
 	// Stones
 	public static final Block MARBLE = registerBlock("marble",
-			new Block(FabricBlockSettings.of(Material.STONE).strength(1.8f)
-					.breakByTool(FabricToolTags.PICKAXES, 0).requiresTool()));
+			new Block(FabricBlockSettings.of(Material.STONE).strength(1.8f).requiresTool()));
 	public static final Block SERPENTINE = registerBlock("serpentine",
-			new Block(FabricBlockSettings.of(Material.STONE).strength(2.0f)
-					.breakByTool(FabricToolTags.PICKAXES, 0).requiresTool()));
+			new Block(FabricBlockSettings.of(Material.STONE).strength(2.0f).requiresTool()));
 
 	// Machines
 	public static final Block ALLOY_MANUFACTORY = registerBlock("alloy_manufactory",
@@ -53,10 +46,8 @@ public class ModBlocks {
 
 
 	// General Blocks
-
 	public static final Block TOUGHENED_GLASS = registerBlock("toughened_glass",
-			new GlassBlock(FabricBlockSettings.of(Material.GLASS).strength(15.0f)
-					.breakByTool(FabricToolTags.PICKAXES, 3).requiresTool().nonOpaque()));
+			new GlassBlock(FabricBlockSettings.of(Material.GLASS).strength(15.0f).requiresTool().nonOpaque()));
 	public static final Block ELECTRIC_TUBE = registerBlock("electric_tube",
 			new ElectricTubeBlock(FabricBlockSettings.of(Material.METAL)));
 

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "more_ores:lead_ore",
+    "more_ores:titanium_ore",
+    "more_ores:silver_ore"
+  ]
+}

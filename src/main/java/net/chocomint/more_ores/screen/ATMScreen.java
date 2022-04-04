@@ -6,16 +6,19 @@ import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.screen.slot.Slot;
+import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
+import net.chocomint.more_ores.util.Enums.*;
 
 import static net.chocomint.more_ores.block.custom.ATMBlock.*;
 
 public class ATMScreen extends HandledScreen<ATMScreenHandler> {
 	private static final Identifier TEXTURE = new Identifier(More_Ores.MOD_ID, "textures/gui/atm_gui.png");
-//	private static final Identifier CARD_SLOT = new Identifier(More_Ores.MOD_ID, "textures/gui/slot/right_slot.png");
+	private static final Identifier BUTTON = new Identifier(More_Ores.MOD_ID, "textures/gui/button/atm_button.png");
 
 	public ATMScreen(ATMScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title);
@@ -26,6 +29,11 @@ public class ATMScreen extends HandledScreen<ATMScreenHandler> {
 		super.init();
 		// Center the title
 		titleX = (backgroundWidth - textRenderer.getWidth(title)) / 2;
+	}
+
+	@Override
+	protected void onMouseClick(Slot slot, int slotId, int button, SlotActionType actionType) {
+		super.onMouseClick(slot, slotId, button, actionType);
 	}
 
 	@Override
@@ -42,10 +50,30 @@ public class ATMScreen extends HandledScreen<ATMScreenHandler> {
 
 		TextureRenderer.draw(TEXTURE, 0, 0, 0, 0, backgroundWidth, backgroundHeight);
 
+		if(inZone(mouseX, mouseY, 95, 51, 110, 66)) {
+			if(mouseClicked(mouseX, mouseY, 1)) {
+				System.out.println("clicked!");
+				BEHAVIOR = CursorBehavior.clicked;
+			}
+			else {
+				System.out.println("inZone!");
+				BEHAVIOR = CursorBehavior.onButton;
+			}
+		}
+		else {
+			System.out.println("None!");
+			BEHAVIOR = CursorBehavior.none;
+		}
+
+		int ordinal = BEHAVIOR.ordinal();
+		TextureRenderer.draw(BUTTON, 95, 51, 0, 16 * ordinal, 16, 16);
+
 		TextRenderer TextRenderer = (text, relateX, relateY) -> textRenderer.draw(matrices, text, x + relateX, y + relateY, 0);
 		TextRenderer.draw(new LiteralText("Welcome! ").append(new LiteralText(PLAYER).formatted(Formatting.ITALIC, Formatting.BLUE)), 8, 18);
 		TextRenderer.draw(new LiteralText("Rank: ").append(CARD.getText()), 8, 28);
 		TextRenderer.draw(new LiteralText("$" + COIN).formatted(Formatting.YELLOW), 8, 38);
+		TextRenderer.draw(new LiteralText(COST == -1 ? "Invalid item!" : "Cost: " + COST)
+				.formatted(Formatting.RED), 28, 55);
 	}
 
 	interface TextureRenderer {

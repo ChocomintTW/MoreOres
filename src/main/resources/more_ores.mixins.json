@@ -6,7 +6,6 @@
   "mixins": [
     "ModEntityDataSaver",
     "RecipeManagerMixin",
-    "NoiseChunkGeneratorMixin",
     "BrewingRecipeRegistryMixin"
   ],
   "client": [

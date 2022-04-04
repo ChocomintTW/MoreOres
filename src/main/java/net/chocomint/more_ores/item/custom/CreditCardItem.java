@@ -1,5 +1,6 @@
 package net.chocomint.more_ores.item.custom;
 
+import net.chocomint.more_ores.util.Enums.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class CreditCardItem extends Item {
 	public CreditCardItem(Settings settings) {
-		super(settings);
+		super(settings.maxCount(1));
 	}
 
 	@Override
@@ -34,32 +35,5 @@ public class CreditCardItem extends Item {
 
 	public static int getCoin(ItemStack stack) {
 		return stack.getOrCreateNbt().getInt("coin");
-	}
-
-	public enum CardRank {
-		STANDARD("standard", Formatting.GREEN),
-		GOLD("gold", Formatting.GOLD),
-		PLATINUM("platinum", Formatting.YELLOW),
-		DIAMOND("diamond", Formatting.AQUA);
-
-		private final String translateKey;
-		private final Formatting[] formats;
-
-		CardRank(String key, Formatting... format) {
-			this.translateKey = key;
-			this.formats = format;
-		}
-
-		public String getTranslateKey() {
-			return translateKey;
-		}
-
-		public Formatting[] getFormats() {
-			return formats;
-		}
-
-		public MutableText getText() {
-			return new TranslatableText("credit_card.rank." + this.translateKey).formatted(this.formats);
-		}
 	}
 }

@@ -10,8 +10,8 @@ import net.minecraft.world.gen.feature.StructurePoolFeatureConfig;
 
 public class ModConfiguredStructures {
 
-	public static final ConfiguredStructureFeature<?, ?> CONFIGURED_ALTAR = register("configured_altar", ModStructures.ALTAR
-			.configure(new StructurePoolFeatureConfig(() -> PlainsVillageData.STRUCTURE_POOLS, 0)));
+//	public static final ConfiguredStructureFeature<?, ?> CONFIGURED_ALTAR = register("configured_altar", ModStructures.ALTAR
+//			.configure(new StructurePoolFeatureConfig(() -> PlainsVillageData.STRUCTURE_POOLS, 0)));
 
 	private static ConfiguredStructureFeature<?, ?> register(String name, ConfiguredStructureFeature<?, ?> configuredStructureFeature) {
 		return Registry.register(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE,

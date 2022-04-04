@@ -1,4 +1,5 @@
 {
+  "item.more_ores.teleport_wand": "Teleport Wand",
   "item.more_ores.credit_card": "Credit Card",
   "item.more_ores.lava_tank": "Lava Tank",
   "item.more_ores.position_rod": "Position Rod",
@@ -43,6 +44,9 @@
   "item.minecraft.potion.effect.freeze": "Freeze Potion",
   "item.minecraft.splash_potion.effect.freeze": "Splash Potion of Freeze",
   "item.minecraft.lingering_potion.effect.freeze": "Lingering Potion of Freeze",
+
+  "item.more_ores.lemon_music_disc": "Music Disc",
+  "item.more_ores.lemon_music_disc.desc": "米津玄師 - Lemon",
 
 
   "block.more_ores.atm": "ATM",

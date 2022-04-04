@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "more_ores:lead_ore",
+    "more_ores:titanium_ore",
+    "more_ores:silver_ore",
+    "more_ores:charged_quartz_ore",
+    "more_ores:marble",
+    "more_ores:serpentine",
+    "more_ores:toughened_glass"
+  ]
+}
