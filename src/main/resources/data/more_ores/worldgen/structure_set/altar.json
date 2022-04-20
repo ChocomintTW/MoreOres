@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "more_ores:altar",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 601684253,
+
+    "spacing": 50,
+
+    "separation": 20,
+
+    "type": "minecraft:random_spread"
+  }
+}

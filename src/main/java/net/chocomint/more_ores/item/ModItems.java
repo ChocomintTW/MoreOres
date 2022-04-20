@@ -2,10 +2,7 @@ package net.chocomint.more_ores.item;
 
 import net.chocomint.more_ores.More_Ores;
 import net.chocomint.more_ores.item.armors.SilverArmors;
-import net.chocomint.more_ores.item.custom.ContainerItem;
-import net.chocomint.more_ores.item.custom.CreditCardItem;
-import net.chocomint.more_ores.item.custom.ModMusicDiscItem;
-import net.chocomint.more_ores.item.custom.TeleportWandItem;
+import net.chocomint.more_ores.item.custom.*;
 import net.chocomint.more_ores.sound.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
@@ -28,20 +25,26 @@ public class ModItems {
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 	public static final Item TELEPORT_WAND = registerItem("teleport_wand",
 			new TeleportWandItem(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+	public static final Item GRAVITY_GUN = registerItem("gravity_gun",
+			new GravityGunItem(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 
 	/* Rseyjinecookxem
 	   Tswastandji
 	   Ldivesloupe
 	   Afusternbavo */
 
-	// Ore ingots
+	// Ore
 	public static final Item LEAD_INGOT = registerItem("lead_ingot",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 	public static final Item TITANIUM_INGOT = registerItem("titanium_ingot",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 	public static final Item SILVER_INGOT = registerItem("silver_ingot",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+
 	public static final Item CHARGED_QUARTZ = registerItem("charged_quartz",
+			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+
+	public static final Item RAW_VIBRANIUM_NUGGET = registerItem("raw_vibranium_nugget",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 
 	// Alloys

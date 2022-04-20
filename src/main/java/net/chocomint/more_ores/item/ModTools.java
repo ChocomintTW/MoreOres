@@ -15,6 +15,8 @@ import static net.chocomint.more_ores.item.material.*;
 
 public class ModTools {
 
+	public static final JsonObject[] LEAD_TOOL_RECIPE = createToolJson(ModItems.LEAD_INGOT, Items.STICK,
+			getItemArray("lead", ModToolMaterials.LEAD, TOOL_LEAD_DETAIL));
 	public static final JsonObject[] TITANIUM_TOOL_RECIPE = createToolJson(ModItems.TITANIUM_INGOT, Items.STICK,
 			getItemArray("titanium", ModToolMaterials.TITANIUM, TOOL_TITANIUM_DETAIL));
 	public static final JsonObject[] SILVER_TOOL_RECIPE = createToolJson(ModItems.SILVER_INGOT, Items.STICK,

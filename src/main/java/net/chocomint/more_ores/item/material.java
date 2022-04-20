@@ -3,8 +3,8 @@ package net.chocomint.more_ores.item;
 public class material {
 
 	public static final Tool TOOL_LEAD = new Tool("lead", 800, 7.0F, 2.0F, 10);
-	public static final Tool TOOL_SILVER = new Tool("silver", 1200, 8.5F, 3.0F, 15);
-	public static final Tool TOOL_TITANIUM = new Tool("silver", 1200, 8.5F, 3.0F, 15);
+	public static final Tool TOOL_TITANIUM = new Tool("titanium", 1200, 8.5F, 3.0F, 15);
+	public static final Tool TOOL_SILVER = new Tool("silver", 1800, 11.0F, 5.0F, 20);
 
 	public static final Armor ARMOR_SILVER = new Armor("silver", 16, new int[]{3, 6, 8, 3}, 15, 3.0F, 0.1F);
 

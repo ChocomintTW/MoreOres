@@ -1,0 +1,25 @@
+{
+  "temperature": 0.8,
+  "downfall": 0,
+  "precipitation": "none",
+  "category": "the_end",
+  "effects": {
+    "sky_color": 0,
+    "fog_color": 8228778,
+    "water_color": 4159204,
+    "water_fog_color": 855385
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:enderman",
+        "weight": 1,
+        "minCount": 3,
+        "maxCount": 5
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": []
+}

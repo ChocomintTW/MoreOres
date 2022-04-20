@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "more_ores:block/hinoki_log_top",
+    "side": "more_ores:block/hinoki_log"
+  }
+}

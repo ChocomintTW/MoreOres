@@ -1,8 +1,6 @@
 package net.chocomint.more_ores.world.gen;
 
 import net.chocomint.more_ores.block.ModBlocks;
-import net.chocomint.more_ores.world.feature.ModConfiguredFeatures;
-import net.chocomint.more_ores.world.feature.ModPlacedFeatures;
 import net.chocomint.more_ores.world.feature.ore.ModOreFeatures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
@@ -11,16 +9,16 @@ import net.minecraft.block.Block;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.util.Pair;
 import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.heightprovider.HeightProvider;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Predicate;
 
 public class ModOreGeneration {
@@ -54,6 +52,13 @@ public class ModOreGeneration {
 				HeightRangePlacementModifier.uniform(YOffset.aboveBottom(0), YOffset.aboveBottom(64))
 		));
 
+		// Ores in The End
+		generator("end_vibranium_ore", new OreGenerationReference(
+				List.of(new Pair<>(ModBlocks.END_VIBRANIUM_ORE, ModOreFeatures.END_ORE)),
+				BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES,
+				4, 2, huAll
+		));
+
 		// Stones
 		generator("marble", new OreGenerationReference(
 				getOverworldList(ModBlocks.MARBLE),
@@ -68,8 +73,9 @@ public class ModOreGeneration {
 	}
 
 	public record OreGenerationReference(List<Pair<Block, RuleTest>> BRP_list, Predicate<BiomeSelectionContext> biomeSelection,
-	                                      GenerationStep.Feature step, int veinSize, int veinsPerChunk,
+	                                     GenerationStep.Feature step, int veinSize, int veinsPerChunk,
 	                                     HeightRangePlacementModifier modifier) {}
+	// HeightRangePlacementModifier 有很多不同種的生成分布方式。像 trapezoid 就是梯形分布，上下最少，中間最多
 
 	public static void generator(String name, OreGenerationReference ref) {
 		List<OreFeatureConfig.Target> list = new ArrayList<>();
@@ -84,7 +90,6 @@ public class ModOreGeneration {
 
 		BiomeModifications.addFeature(ref.biomeSelection, ref.step, ORE_PLACED.getKey().get());
 	}
-	// HeightRangePlacementModifier 有很多不同種的生成分布方式。像 trapezoid 就是梯形分布，上下最少，中間最多
 
 	// utilities
 	private static List<Pair<Block, RuleTest>> getOverworldList(Block block) {
@@ -92,4 +97,7 @@ public class ModOreGeneration {
 				new Pair<>(block, OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES));
 	}
 	private static final HeightRangePlacementModifier huAll = HeightRangePlacementModifier.uniform(YOffset.BOTTOM, YOffset.TOP);
+	private static Predicate<BiomeSelectionContext> foundInDimension(RegistryKey<DimensionOptions> dimension) {
+		return context -> context.canGenerateIn(dimension);
+	}
 }

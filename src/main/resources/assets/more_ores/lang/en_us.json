@@ -2,7 +2,6 @@
   "item.more_ores.teleport_wand": "Teleport Wand",
   "item.more_ores.credit_card": "Credit Card",
   "item.more_ores.lava_tank": "Lava Tank",
-  "item.more_ores.position_rod": "Position Rod",
 
   "item.more_ores.advanced_coal": "Advanced Coal",
   "item.more_ores.silver_ingot": "Silver Ingot",
@@ -10,6 +9,7 @@
   "item.more_ores.lead_ingot": "Lead Ingot",
   "item.more_ores.steel_ingot": "Steel Ingot",
   "item.more_ores.charged_quartz": "Charged Quartz",
+  "item.more_ores.raw_vibranium_nugget": "Raw Vibranium Nugget",
   "item.more_ores.reinforced_charged_quartz": "Reinforced Charged Quartz",
   "item.more_ores.pierresitvia_alloy": "Pierresitvia Alloy",
   "item.more_ores.reinforced_blaze_rod": "Reinforced Blaze Rod",
@@ -57,11 +57,24 @@
   "block.more_ores.titanium_ore": "Titanium Ore",
   "block.more_ores.lead_ore": "Lead Ore",
   "block.more_ores.charged_quartz_ore": "Charged Quartz Ore",
+  "block.more_ores.end_vibranium_ore": "End Vibranium Ore",
+  "block.more_ores.end_aquamarine_nylium": "End Aquamarine Nylium",
 
   "block.more_ores.serpentine": "Serpentine",
   "block.more_ores.marble": "Marble",
 
+  "block.more_ores.stone_bricks_pedestal": "Stone Bricks Pedestal",
+  "block.more_ores.diamond_pedestal": "Diamond Pedestal",
+
+  "block.more_ores.hinoki_log": "Hinoki Log",
+  "block.more_ores.hinoki_wood": "Hinoki Wood",
+  "block.more_ores.stripped_hinoki_log": "Stripped Hinoki Log",
+  "block.more_ores.stripped_hinoki_wood": "Stripped Hinoki Wood",
+  "block.more_ores.hinoki_planks": "Hinoki Planks",
+
+
   "tooltip.credit_card.unregistered": "Unregistered",
+  "tooltip.teleport_wand.max_distance": "Max teleport distance: %d",
 
   "message.credit_card.register_owner": "You have registered this card!",
   "message.credit_card.has_owner": "The card belongs to %s!",

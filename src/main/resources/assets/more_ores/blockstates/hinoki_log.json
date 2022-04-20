@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "more_ores:block/hinoki_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "more_ores:block/hinoki_log"
+    },
+    "axis=z": {
+      "model": "more_ores:block/hinoki_log_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -6,9 +6,7 @@ import net.chocomint.more_ores.item.ModItemGroup;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.GlassBlock;
-import net.minecraft.block.Material;
+import net.minecraft.block.*;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -29,6 +27,11 @@ public class ModBlocks {
 
 	public static final Block CHARGED_QUARTZ_ORE = registerBlock("charged_quartz_ore",
 			new Block(FabricBlockSettings.of(Material.STONE).strength(12.0f).requiresTool()));
+
+	public static final Block END_VIBRANIUM_ORE = registerBlock("end_vibranium_ore",
+			new Block(FabricBlockSettings.of(Material.STONE).strength(8.0f).requiresTool()));
+	public static final Block END_AQUAMARINE_NYLIUM = registerBlock("end_aquamarine_nylium",
+			new Block(FabricBlockSettings.of(Material.STONE).strength(6.0f).requiresTool()));
 
 	// Stones
 	public static final Block MARBLE = registerBlock("marble",
@@ -51,9 +54,14 @@ public class ModBlocks {
 	public static final Block ELECTRIC_TUBE = registerBlock("electric_tube",
 			new ElectricTubeBlock(FabricBlockSettings.of(Material.METAL)));
 
+	public static final Block STONE_BRICKS_PEDESTAL = registerBlock("stone_bricks_pedestal",
+			new PedestalBlock(FabricBlockSettings.of(Material.STONE).strength(8f)));
+	public static final Block DIAMOND_PEDESTAL = registerBlock("diamond_pedestal",
+			new PedestalBlock(FabricBlockSettings.of(Material.STONE).strength(10f)));
+
 
 	// Functions
-	private static Block registerBlock(String name, Block block) {
+	protected static Block registerBlock(String name, Block block) {
 		registerBlockItem(name, block);
 		return Registry.register(Registry.BLOCK, new Identifier(More_Ores.MOD_ID, name), block);
 	}
@@ -64,6 +72,7 @@ public class ModBlocks {
 	}
 
 	public static void registerModBlocks() {
+		ModWoodBlocks.registerWoodBlocks();
 		System.out.println("Registering Mod Blocks for" + More_Ores.MOD_ID);
 	}
 

@@ -43,7 +43,6 @@ public class ATMBlock extends BlockWithEntity implements BlockEntityProvider {
 	public static Enums.CardRank CARD;
 	public static int COIN;
 	public static int COST;
-	public static Enums.CursorBehavior BEHAVIOR;
 
 	private static final VoxelShape center = Block.createCuboidShape(1, 0, 1, 15, 32, 16);
 	private static final VoxelShape left   = Block.createCuboidShape(0, 0, 0, 16, 32, 0);

@@ -41,7 +41,7 @@ public class RecipeManagerMixin {
 
 	@Inject(method = "apply", at = @At("HEAD"))
 	public void interceptApply(Map<Identifier, JsonElement> map, ResourceManager resourceManager, Profiler profiler, CallbackInfo info) {
-		RE RecipeRegister = (String name, JsonObject[] recipe) -> {
+		RE ToolRecipeRegister = (String name, JsonObject[] recipe) -> {
 			map.put(new Identifier(More_Ores.MOD_ID, name + "_sword"), recipe[0]);
 			map.put(new Identifier(More_Ores.MOD_ID, name + "_shovel"), recipe[1]);
 			map.put(new Identifier(More_Ores.MOD_ID, name + "_pickaxe"), recipe[2]);
@@ -49,8 +49,16 @@ public class RecipeManagerMixin {
 			map.put(new Identifier(More_Ores.MOD_ID, name + "_hoe"), recipe[4]);
 		};
 
-		RecipeRegister.register("silver", SILVER_TOOL_RECIPE);
-		RecipeRegister.register("titanium", TITANIUM_TOOL_RECIPE);
+		RE ArmorRecipeRegister = (String name, JsonObject[] recipe) -> {
+			map.put(new Identifier(More_Ores.MOD_ID, name + "_helmet"), recipe[0]);
+			map.put(new Identifier(More_Ores.MOD_ID, name + "_chestplate"), recipe[1]);
+			map.put(new Identifier(More_Ores.MOD_ID, name + "_leggings"), recipe[2]);
+			map.put(new Identifier(More_Ores.MOD_ID, name + "_boots"), recipe[3]);
+		};
+
+		ToolRecipeRegister.register("lead", LEAD_TOOL_RECIPE);
+		ToolRecipeRegister.register("titanium", TITANIUM_TOOL_RECIPE);
+		ToolRecipeRegister.register("silver", SILVER_TOOL_RECIPE);
 	}
 
 	interface RE {

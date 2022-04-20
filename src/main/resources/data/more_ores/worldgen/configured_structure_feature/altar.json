@@ -1,0 +1,16 @@
+{
+  "type": "more_ores:altar_structure",
+
+  "config": {
+    "start_pool": "more_ores:altar_start_pool",
+
+    "size": 1
+  },
+
+  "biomes": "#more_ores:has_structure/altar_biomes",
+
+  "adapt_noise": true,
+
+  "spawn_overrides": {
+  }
+}

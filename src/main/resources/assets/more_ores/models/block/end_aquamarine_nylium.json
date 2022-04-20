@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "more_ores:block/end_aquamarine_nylium",
+    "bottom": "minecraft:block/end_stone",
+    "side": "more_ores:block/end_aquamarine_nylium_side"
+  }
+}

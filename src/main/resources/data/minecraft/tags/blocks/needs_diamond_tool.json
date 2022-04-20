@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "more_ores:toughened_glass"
+    "more_ores:toughened_glass",
+    "more_ores:diamond_pedestal"
   ]
 }

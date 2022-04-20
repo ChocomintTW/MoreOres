@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "more_ores:block/stripped_hinoki_log",
+    "side": "more_ores:block/stripped_hinoki_log"
+  }
+}

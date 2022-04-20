@@ -22,7 +22,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 	private final float knockbackResistance;
 	private final Lazy<Ingredient> repairIngredientSupplier;
 
-	private ModArmorMaterials(material.Armor config, SoundEvent equipSound, Supplier<Ingredient> repairIngredientSupplier) {
+	ModArmorMaterials(material.Armor config, SoundEvent equipSound, Supplier<Ingredient> repairIngredientSupplier) {
 		this.name = config.name;
 		this.durabilityMultiplier = config.durabilityMultiplier;
 		this.protectionAmounts = config.protectionAmounts;

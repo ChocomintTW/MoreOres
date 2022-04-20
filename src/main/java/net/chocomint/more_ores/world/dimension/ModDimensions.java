@@ -8,9 +8,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionOptions;
 
 public class ModDimensions {
-	private static final RegistryKey<DimensionOptions> DIMENSION_KEY = RegistryKey.of(Registry.DIMENSION_KEY,
+	public static final RegistryKey<DimensionOptions> CAVE_DIMENSION = RegistryKey.of(Registry.DIMENSION_KEY,
 			new Identifier(More_Ores.MOD_ID, "cave"));
-	public static RegistryKey<World> CAVE_KEY = RegistryKey.of(Registry.WORLD_KEY, DIMENSION_KEY.getValue());
+	public static RegistryKey<World> CAVE_KEY = RegistryKey.of(Registry.WORLD_KEY, CAVE_DIMENSION.getValue());
 
 	public static void registerModDimensions() {
 		System.out.println("Registering Mod Dimensions for " + More_Ores.MOD_ID);

@@ -59,7 +59,7 @@ public class AlloyManufactoryBlock extends BlockWithEntity implements BlockEntit
 			//a namedScreenHandlerFactory. If your block class does not extend BlockWithEntity, it needs to implement createScreenHandlerFactory.
 			NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
 
-			AlloyManufactoryBlockEntity blockEntity = (AlloyManufactoryBlockEntity)world.getBlockEntity(pos);
+			AlloyManufactoryBlockEntity blockEntity = (AlloyManufactoryBlockEntity) world.getBlockEntity(pos);
 
 			if(blockEntity.getLava() <= 4000) {
 				if (player.getMainHandStack().getItem() == Items.LAVA_BUCKET) {

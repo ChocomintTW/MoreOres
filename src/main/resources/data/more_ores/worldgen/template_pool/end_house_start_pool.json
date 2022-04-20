@@ -1,12 +1,12 @@
 {
-  "name": "more_ores:altar/start_pool",
+  "name": "more_ores:end_house_start_pool",
   "fallback": "minecraft:empty",
 
   "elements": [
     {
       "weight": 1,
       "element": {
-        "location": "more_ores:altar",
+        "location": "more_ores:end_house",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

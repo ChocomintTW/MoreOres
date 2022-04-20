@@ -7,25 +7,6 @@ import net.minecraft.util.math.Vec3i;
 
 public class Enums {
 
-	private enum direction {
-		top  (0, 1, 0 ),
-		down (0, -1,0 ),
-		east (1, 0, 0 ),
-		west (-1,0, 0 ),
-		north(0, 0, -1),
-		south(0, 0, 1 );
-
-		private final Vec3i relative_pos;
-
-		direction(int x, int y, int z) {
-			this.relative_pos = new Vec3i(x, y, z);
-		}
-
-		public Vec3i getRelativePos() {
-			return relative_pos;
-		}
-	}
-
 	public enum CardRank {
 		STANDARD("standard", Formatting.GREEN),
 		GOLD("gold", Formatting.GOLD),
@@ -53,7 +34,4 @@ public class Enums {
 		}
 	}
 
-	public enum CursorBehavior {
-		onButton, none, clicked
-	}
 }

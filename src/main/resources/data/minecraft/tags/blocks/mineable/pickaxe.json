@@ -5,8 +5,11 @@
     "more_ores:titanium_ore",
     "more_ores:silver_ore",
     "more_ores:charged_quartz_ore",
+    "more_ores:end_vibranium_ore",
     "more_ores:marble",
     "more_ores:serpentine",
-    "more_ores:toughened_glass"
+    "more_ores:toughened_glass",
+    "more_ores:stone_bricks_pedestal",
+    "more_ores:diamond_pedestal"
   ]
 }

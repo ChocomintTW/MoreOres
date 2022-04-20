@@ -6,7 +6,8 @@
   "mixins": [
     "ModEntityDataSaver",
     "RecipeManagerMixin",
-    "BrewingRecipeRegistryMixin"
+    "BrewingRecipeRegistryMixin",
+    "StructureFeatureAccessor"
   ],
   "client": [
     "TestMixin"

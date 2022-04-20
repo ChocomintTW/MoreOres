@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "more_ores:charged_quartz_ore"
+    "more_ores:charged_quartz_ore",
+    "more_ores:end_vibranium_ore"
   ]
 }

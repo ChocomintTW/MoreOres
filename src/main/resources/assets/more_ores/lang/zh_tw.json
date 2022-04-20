@@ -1,17 +1,91 @@
 {
+  "item.more_ores.teleport_wand": "傳送法杖",
+  "item.more_ores.credit_card": "信用卡",
+  "item.more_ores.lava_tank": "岩漿罐",
+
+  "item.more_ores.advanced_coal": "先進煤炭",
+  "item.more_ores.silver_ingot": "銀錠",
   "item.more_ores.titanium_ingot": "鈦錠",
   "item.more_ores.lead_ingot": "鉛錠",
-  "item.more_ores.void_gem": "虛空寶石",
+  "item.more_ores.steel_ingot": "鋼錠",
+  "item.more_ores.charged_quartz": "充能石英",
+  "item.more_ores.raw_vibranium_nugget": "生汎金屬粒",
+  "item.more_ores.reinforced_charged_quartz": "強化充能石英",
+  "item.more_ores.pierresitvia_alloy": "皮埃西維亞合金",
+  "item.more_ores.reinforced_blaze_rod": "強化烈焰桿",
+  "item.more_ores.glow_blaze_alloy": "烈焰螢石合金",
 
+  "item.more_ores.titanium_sword": "鈦劍",
+  "item.more_ores.titanium_shovel": "鈦鏟",
+  "item.more_ores.titanium_pickaxe": "鈦鎬",
+  "item.more_ores.titanium_axe": "鈦斧",
+  "item.more_ores.titanium_hoe": "鈦鋤",
+
+  "item.more_ores.silver_sword": "銀劍",
+  "item.more_ores.silver_shovel": "銀鏟",
+  "item.more_ores.silver_pickaxe": "銀鎬",
+  "item.more_ores.silver_axe": "銀斧",
+  "item.more_ores.silver_hoe": "銀鋤",
+
+  "item.more_ores.lead_sword": "鉛劍",
+  "item.more_ores.lead_shovel": "鉛鏟",
+  "item.more_ores.lead_pickaxe": "鉛鎬",
+  "item.more_ores.lead_axe": "鉛斧",
+  "item.more_ores.lead_hoe": "鉛鋤",
+
+  "item.more_ores.silver_helmet": "銀製頭盔",
+  "item.more_ores.silver_chestplate": "銀製胸甲",
+  "item.more_ores.silver_leggings": "銀製護腿",
+  "item.more_ores.silver_boots": "銀製靴子",
+
+  "item.minecraft.potion.effect.strengthen_fire_resistance": "強化火焰抗性藥水",
+  "item.minecraft.splash_potion.effect.strengthen_fire_resistance": "飛濺強化火焰抗性藥水",
+  "item.minecraft.lingering_potion.effect.strengthen_fire_resistance": "滯留強化火焰抗性藥水",
+  "item.minecraft.potion.effect.freeze": "冰凍藥水",
+  "item.minecraft.splash_potion.effect.freeze": "飛濺冰凍藥水",
+  "item.minecraft.lingering_potion.effect.freeze": "滯留冰凍藥水",
+
+  "item.more_ores.lemon_music_disc": "Music Disc",
+  "item.more_ores.lemon_music_disc.desc": "米津玄師 - Lemon",
+
+
+  "block.more_ores.atm": "ATM",
+  "block.more_ores.filler": "填充器",
+  "block.more_ores.alloy_manufactory": "合金製造機",
+  "block.more_ores.toughened_glass": "強化玻璃",
+  "block.more_ores.silver_ore": "銀礦",
   "block.more_ores.titanium_ore": "鈦礦",
   "block.more_ores.lead_ore": "鉛礦",
-  "block.more_ores.void_gem_ore": "虛空寶石礦",
+  "block.more_ores.charged_quartz_ore": "充能石英礦",
+  "block.more_ores.end_vibranium_ore": "終界汎金屬礦",
+  "block.more_ores.end_aquamarine_nylium": "終界海藍菌絲石",
 
+  "block.more_ores.serpentine": "蛇紋岩",
+  "block.more_ores.marble": "大理石",
+
+  "block.more_ores.stone_bricks_pedestal": "石磚臺座",
+  "block.more_ores.diamond_pedestal": "鑽石臺座",
+
+  "block.more_ores.hinoki_log": "檜木原木",
+  "block.more_ores.hinoki_wood": "檜木木塊",
+  "block.more_ores.stripped_hinoki_log": "剝皮檜木原木",
+  "block.more_ores.stripped_hinoki_wood": "剝皮檜木木塊",
+  "block.more_ores.hinoki_planks": "檜木木材",
+
+
+  "tooltip.credit_card.unregistered": "未註冊",
+  "tooltip.teleport_wand.max_distance": "最大傳送距離: %d",
+
+  "message.credit_card.register_owner": "你已註冊此卡!",
+  "message.credit_card.has_owner": "本卡屬於 %s!",
+  "message.credit_card.no_card": "將你的信用卡拿在手上!",
 
   "credit_card.rank.standard": "一般會員",
   "credit_card.rank.gold": "黃金會員",
   "credit_card.rank.platinum": "白金會員",
   "credit_card.rank.diamond": "鑽石會員",
+
+  "effect.more_ores.freeze": "冰凍",
 
   "itemGroup.more_ores.more_ores": "更多礦物"
 }

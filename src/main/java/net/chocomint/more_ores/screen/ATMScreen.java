@@ -3,9 +3,13 @@ package net.chocomint.more_ores.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.chocomint.more_ores.More_Ores;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.network.packet.c2s.play.RenameItemC2SPacket;
+import net.minecraft.screen.AnvilScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.text.LiteralText;
@@ -17,8 +21,10 @@ import net.chocomint.more_ores.util.Enums.*;
 import static net.chocomint.more_ores.block.custom.ATMBlock.*;
 
 public class ATMScreen extends HandledScreen<ATMScreenHandler> {
+	private ButtonWidget BUY;
+	private TextFieldWidget nameField;
+
 	private static final Identifier TEXTURE = new Identifier(More_Ores.MOD_ID, "textures/gui/atm_gui.png");
-	private static final Identifier BUTTON = new Identifier(More_Ores.MOD_ID, "textures/gui/button/atm_button.png");
 
 	public ATMScreen(ATMScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title);
@@ -29,6 +35,31 @@ public class ATMScreen extends HandledScreen<ATMScreenHandler> {
 		super.init();
 		// Center the title
 		titleX = (backgroundWidth - textRenderer.getWidth(title)) / 2;
+
+		// Create Buttons
+		int x = (width - backgroundWidth) / 2;
+		int y = (height - backgroundHeight) / 2;
+		this.BUY = this.addDrawableChild(new ButtonWidget(x + 110, y + 50, 35, 20, new LiteralText("Buy"), button -> {
+			System.out.println("Buy!");
+			this.close();
+		}));
+//		this.nameField = new TextFieldWidget(this.textRenderer, x + 110, y + 20, 50, 16, new LiteralText("text"));
+//		this.nameField.setFocusUnlocked(false);
+//		this.nameField.setEditableColor(-1);
+//		this.nameField.setUneditableColor(-1);
+//		this.nameField.setDrawsBackground(false);
+//		this.nameField.setMaxLength(50);
+//		this.nameField.setChangedListener(this::onRenamed);
+//		this.nameField.setText("");
+//		this.addSelectableChild(this.nameField);
+//		this.setInitialFocus(this.nameField);
+//		this.nameField.setEditable(false);
+	}
+
+	private void onRenamed(String name) {
+		if (!name.isEmpty()) {
+			System.out.println(name);
+		}
 	}
 
 	@Override
@@ -50,28 +81,11 @@ public class ATMScreen extends HandledScreen<ATMScreenHandler> {
 
 		TextureRenderer.draw(TEXTURE, 0, 0, 0, 0, backgroundWidth, backgroundHeight);
 
-		if(inZone(mouseX, mouseY, 95, 51, 110, 66)) {
-			if(mouseClicked(mouseX, mouseY, 1)) {
-				System.out.println("clicked!");
-				BEHAVIOR = CursorBehavior.clicked;
-			}
-			else {
-				System.out.println("inZone!");
-				BEHAVIOR = CursorBehavior.onButton;
-			}
-		}
-		else {
-			System.out.println("None!");
-			BEHAVIOR = CursorBehavior.none;
-		}
-
-		int ordinal = BEHAVIOR.ordinal();
-		TextureRenderer.draw(BUTTON, 95, 51, 0, 16 * ordinal, 16, 16);
-
 		TextRenderer TextRenderer = (text, relateX, relateY) -> textRenderer.draw(matrices, text, x + relateX, y + relateY, 0);
 		TextRenderer.draw(new LiteralText("Welcome! ").append(new LiteralText(PLAYER).formatted(Formatting.ITALIC, Formatting.BLUE)), 8, 18);
 		TextRenderer.draw(new LiteralText("Rank: ").append(CARD.getText()), 8, 28);
 		TextRenderer.draw(new LiteralText("$" + COIN).formatted(Formatting.YELLOW), 8, 38);
+		System.out.println(COST);
 		TextRenderer.draw(new LiteralText(COST == -1 ? "Invalid item!" : "Cost: " + COST)
 				.formatted(Formatting.RED), 28, 55);
 	}

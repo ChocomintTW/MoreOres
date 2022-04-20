@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "more_ores:end_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 925401115151,
+
+    "spacing": 80,
+
+    "separation": 50,
+
+    "type": "minecraft:random_spread"
+  }
+}

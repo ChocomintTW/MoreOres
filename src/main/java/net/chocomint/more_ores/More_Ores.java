@@ -1,6 +1,7 @@
 package net.chocomint.more_ores;
 
 import net.chocomint.more_ores.block.ModBlocks;
+import net.chocomint.more_ores.block.entity.ModBlockEntities;
 import net.chocomint.more_ores.config.ModConfigs;
 import net.chocomint.more_ores.util.atm.ATMCostJsonSerializer;
 import net.chocomint.more_ores.util.effect.ModEffects;
@@ -8,10 +9,12 @@ import net.chocomint.more_ores.item.ModItems;
 import net.chocomint.more_ores.util.potion.ModPotions;
 import net.chocomint.more_ores.recipe.ModRecipes;
 import net.chocomint.more_ores.util.ModRegistries;
+import net.chocomint.more_ores.world.biome.ModBiomes;
 import net.chocomint.more_ores.world.dimension.ModDimensions;
 import net.chocomint.more_ores.world.feature.ModConfiguredFeatures;
+import net.chocomint.more_ores.world.feature.ModFeatures;
 import net.chocomint.more_ores.world.gen.ModWorldGen;
-import net.chocomint.more_ores.world.structures.ModConfiguredStructures;
+import net.chocomint.more_ores.world.structures.ModStructures;
 import net.fabricmc.api.ModInitializer;
 
 import java.io.IOException;
@@ -47,29 +50,32 @@ public class More_Ores implements ModInitializer {
 		// Configs
 		ModConfigs.registerConfigs();
 
+		// Generates
+		ModWorldGen.generateModWorldGen();
+		ModDimensions.registerModDimensions();
+		ModFeatures.registerModFeatures();
+		ModConfiguredFeatures.registerModConfiguredFeatures();
+		ModBiomes.registerModBiomes();
+
+		// Structure
+		ModStructures.registerStructureFeatures();
+
 		// Registries
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModBlockEntities.registerAllBlockEntities();
 		ModRecipes.register();
 
 		ModRegistries.registerModFuel();
 		ModRegistries.registerCommands();
 		ModRegistries.registerEvents();
 		ModRegistries.registerCustomTrades();
+		ModRegistries.registerStrippableBlocks();
+		ModRegistries.registerFlammableBlocks();
 
 		// Potions
 		ModPotions.registerModPotions();
 		ModEffects.registerModEffect();
-
-		// Generates
-//		ModConfiguredFeatures.registerConfiguredFeatures();
-		ModWorldGen.generateModWorldGen();
-		ModDimensions.registerModDimensions();
-
-		// Structure
-//		ModStructures.setupAndRegisterStructureFeatures();
-//		ModConfiguredStructures.registerConfiguredStructures();
-//		ModStructures.addStructureSpawningToDimensionsAndBiomes();
 
 		// Rendering
 		ModBlocks.renderGlassBlock(ModBlocks.TOUGHENED_GLASS);
@@ -82,6 +88,6 @@ public class More_Ores implements ModInitializer {
 			e.printStackTrace();
 		}
 
-		System.out.println("Hello Fabric world!");
+		System.out.println("Hello Fabric World!");
 	}
 }

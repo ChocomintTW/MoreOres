@@ -1,0 +1,16 @@
+{
+  "type": "more_ores:end_house_structure",
+
+  "config": {
+    "start_pool": "more_ores:end_house_start_pool",
+
+    "size": 1
+  },
+
+  "biomes": "#more_ores:has_structure/end_house_biomes",
+
+  "adapt_noise": true,
+
+  "spawn_overrides": {
+  }
+}
