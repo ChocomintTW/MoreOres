@@ -4,6 +4,7 @@ import net.chocomint.more_ores.More_Ores;
 import net.chocomint.more_ores.block.ModWoodBlocks;
 import net.chocomint.more_ores.command.ReturnPositionCommand;
 import net.chocomint.more_ores.command.SetPositionCommand;
+import net.chocomint.more_ores.command.LZHCommand;
 import net.chocomint.more_ores.events.PlayerEvents;
 import net.chocomint.more_ores.item.ModItems;
 import net.chocomint.more_ores.util.trade.Trade;
@@ -20,6 +21,19 @@ import static net.chocomint.more_ores.block.ModWoodBlocks.*;
 
 public class ModRegistries {
 
+	public static void registerAllRegistries() {
+		registerModFuel();
+		registerCommands();
+		registerEvents();
+		registerCustomTrades();
+		registerStrippableBlocks();
+		registerFlammableBlocks();
+		registerAnotherRecipe();
+	}
+
+	public static void registerAnotherRecipe() {
+	}
+
 	public static void registerModFuel() {
 		System.out.println("Registering Fuels for " + More_Ores.MOD_ID);
 		FuelRegistry fuel = FuelRegistry.INSTANCE;
@@ -30,6 +44,7 @@ public class ModRegistries {
 	public static void registerCommands() {
 		CommandRegistrationCallback.EVENT.register(SetPositionCommand::register);
 		CommandRegistrationCallback.EVENT.register(ReturnPositionCommand::register);
+		CommandRegistrationCallback.EVENT.register(LZHCommand::register);
 	}
 
 	public static void registerEvents() {

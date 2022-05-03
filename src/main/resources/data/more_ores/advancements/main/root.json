@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "more_ores:serpentine"
+    },
+    "title": "advancement.main.root.title",
+    "description": "",
+    "background": "more_ores:textures/block/marble.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "more_ores:silver_ore",
+              "more_ores:titanium_ore",
+              "more_ores:lead_ore"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

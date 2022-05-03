@@ -1,0 +1,15 @@
+{
+  "type": "more_ores:alloy_manufacture",
+  "ingredients": [
+    {
+      "item": "more_ores:enderman_core"
+    },
+    {
+      "item": "more_ores:pierresitvia_alloy"
+    }
+  ],
+  "lava": 1000,
+  "result": {
+    "item": "more_ores:teleport_core"
+  }
+}

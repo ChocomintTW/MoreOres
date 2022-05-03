@@ -1,7 +1,9 @@
 {
+  "item.more_ores.remote_control": "Remote Control",
   "item.more_ores.teleport_wand": "Teleport Wand",
   "item.more_ores.credit_card": "Credit Card",
   "item.more_ores.lava_tank": "Lava Tank",
+  "item.more_ores.paolyta_b": "Paolyta B",
 
   "item.more_ores.advanced_coal": "Advanced Coal",
   "item.more_ores.silver_ingot": "Silver Ingot",
@@ -14,6 +16,10 @@
   "item.more_ores.pierresitvia_alloy": "Pierresitvia Alloy",
   "item.more_ores.reinforced_blaze_rod": "Reinforced Blaze Rod",
   "item.more_ores.glow_blaze_alloy": "Glow Blaze Alloy",
+
+  "item.more_ores.enderman_scrap": "Enderman Scrap",
+  "item.more_ores.enderman_core": "Enderman Core",
+  "item.more_ores.teleport_core": "Teleport Core",
 
   "item.more_ores.titanium_sword": "Titanium Sword",
   "item.more_ores.titanium_shovel": "Titanium Shovel",
@@ -75,10 +81,22 @@
 
   "tooltip.credit_card.unregistered": "Unregistered",
   "tooltip.teleport_wand.max_distance": "Max teleport distance: %d",
+  "tooltip.paolyta_b.info": "Remove mining fatigue effect",
+
+  "tooltip.remote_control.line1": "Sneak and use on a block to bind a block",
+  "tooltip.remote_control.line2": "Press §eSHIFT§r for more information",
+  "tooltip.remote_control.shift": "Bound Block: %s",
 
   "message.credit_card.register_owner": "You have registered this card!",
   "message.credit_card.has_owner": "The card belongs to %s!",
   "message.credit_card.no_card": "You should take your credit card in hand!",
+
+  "message.remote_control.bound": "Bound the §b%1$s§r at %2$s",
+  "message.remote_control.lit": "Turn on the §b%1$s§r at %2$s",
+  "message.remote_control.no_lit": "Turn off the §b%1$s§r at %2$s",
+
+  "message.teleport_wand.max": "Max distance is %d blocks!",
+  "message.teleport_wand.block": "The position you want to teleport is not AIR!",
 
   "credit_card.rank.standard": "Standard Member",
   "credit_card.rank.gold": "Gold Member",
@@ -87,5 +105,16 @@
 
   "effect.more_ores.freeze": "Freeze",
 
-  "itemGroup.more_ores.more_ores": "More Ores"
+  "enchantment.more_ores.distance_addition": "Distance Addition",
+
+  "rei.more_ores.alloy_manufacture": "Alloy Manufacture",
+
+  "itemGroup.more_ores.more_ores": "More Ores",
+
+
+  "advancement.main.root.title": "More Ores",
+  "advancement.main.silver.title": "Shining Silver",
+  "advancement.main.silver.description": "Get a silver ingot",
+  "advancement.main.charged_quartz.title": "Energy Spring",
+  "advancement.main.charged_quartz.description": "Get a charged quartz"
 }

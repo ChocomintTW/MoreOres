@@ -11,26 +11,19 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
-import java.util.Objects;
-
-public class AlloyManufactoryRecipe implements Recipe<SimpleInventory> {
-
-	private final Identifier id;
-	private final ItemStack output;
-	private final DefaultedList<Ingredient> recipeItems;
-	private final int lavaAmount;
-
-	public AlloyManufactoryRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems, int lavaAmount) {
-		this.id = id;
-		this.output = output;
-		this.recipeItems = recipeItems;
-		this.lavaAmount = lavaAmount;
-	}
+public record AlloyManufactoryRecipe(Identifier id, ItemStack output,
+                                     DefaultedList<Ingredient> recipeItems,
+                                     int lavaAmount) implements Recipe<SimpleInventory> {
 
 	@Override
 	public boolean matches(SimpleInventory inventory, World world) {
 		return recipeItems.get(0).test(inventory.getStack(0))
-			&& recipeItems.get(1).test(inventory.getStack(1));
+				&& recipeItems.get(1).test(inventory.getStack(1));
+	}
+
+	@Override
+	public DefaultedList<Ingredient> getIngredients() {
+		return recipeItems;
 	}
 
 	@Override
@@ -68,7 +61,9 @@ public class AlloyManufactoryRecipe implements Recipe<SimpleInventory> {
 	}
 
 	public static class Type implements RecipeType<AlloyManufactoryRecipe> {
-		private Type() { }
+		private Type() {
+		}
+
 		public static final Type INSTANCE = new Type();
 		public static final String ID = "alloy_manufacture";
 	}

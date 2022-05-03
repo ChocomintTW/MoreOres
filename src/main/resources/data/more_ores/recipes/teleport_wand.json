@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C#",
+    " # ",
+    " T "
+  ],
+  "key": {
+    "C": {
+      "item": "more_ores:teleport_core"
+    },
+    "#": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "T": {
+      "item": "more_ores:reinforced_blaze_rod"
+    }
+  },
+  "result": {
+    "item": "more_ores:teleport_wand"
+  }
+}

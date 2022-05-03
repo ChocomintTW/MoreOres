@@ -22,6 +22,9 @@
     ],
     "client": [
       "net.chocomint.more_ores.ClientMod"
+    ],
+    "rei_plugins_v0": [
+      "net.chocomint.more_ores.rei.ModREIPlugin"
     ]
   },
   "mixins": [

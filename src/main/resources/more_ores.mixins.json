@@ -7,7 +7,9 @@
     "ModEntityDataSaver",
     "RecipeManagerMixin",
     "BrewingRecipeRegistryMixin",
-    "StructureFeatureAccessor"
+    "StructureFeatureAccessor",
+    "UnbreakingEnchantmentMixin",
+    "EnchantmentMixin"
   ],
   "client": [
     "TestMixin"

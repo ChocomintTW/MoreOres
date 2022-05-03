@@ -39,7 +39,7 @@ public class AlloyManufactoryScreen extends HandledScreen<AlloyManufactoryScreen
 			int progress = handler.getScaledProgress();
 			this.drawTexture(matrices, x + 87, y + 41, 0, 168, progress, 5);
 			// (x, y) is where the "object" will be
-			// (u, v) is where the "object" ACTUALLY located at
+			// (u, v) is where the "object" ACTUALLY located at TEXTURE
 			// (width, height) is the size of the "object"
 		}
 

@@ -1,0 +1,120 @@
+{
+  "item.more_ores.remote_control": "遙控器",
+  "item.more_ores.teleport_wand": "瞬杖",
+  "item.more_ores.credit_card": "信用卡",
+  "item.more_ores.lava_tank": "熔巖罐",
+  "item.more_ores.paolyta_b": "提神劑",
+
+  "item.more_ores.advanced_coal": "先進煤",
+  "item.more_ores.silver_ingot": "銀錠",
+  "item.more_ores.titanium_ingot": "鈦錠",
+  "item.more_ores.lead_ingot": "鉛錠",
+  "item.more_ores.steel_ingot": "鋼錠",
+  "item.more_ores.charged_quartz": "注能石英",
+  "item.more_ores.raw_vibranium_nugget": "生汎粒",
+  "item.more_ores.reinforced_charged_quartz": "強注能石英",
+  "item.more_ores.pierresitvia_alloy": "皮埃西維亞合金",
+  "item.more_ores.reinforced_blaze_rod": "強炎靈桿",
+  "item.more_ores.glow_blaze_alloy": "烈螢合金",
+
+  "item.more_ores.enderman_scrap": "終眇使片",
+  "item.more_ores.enderman_core": "終眇使核",
+  "item.more_ores.teleport_core": "瞬核",
+
+  "item.more_ores.titanium_sword": "鈦劍",
+  "item.more_ores.titanium_shovel": "鈦鍁",
+  "item.more_ores.titanium_pickaxe": "鈦鎬",
+  "item.more_ores.titanium_axe": "鈦斧",
+  "item.more_ores.titanium_hoe": "鈦鋤",
+
+  "item.more_ores.silver_sword": "銀劍",
+  "item.more_ores.silver_shovel": "銀鍁",
+  "item.more_ores.silver_pickaxe": "銀鎬",
+  "item.more_ores.silver_axe": "銀斧",
+  "item.more_ores.silver_hoe": "銀鋤",
+
+  "item.more_ores.lead_sword": "鉛劍",
+  "item.more_ores.lead_shovel": "鉛鍁",
+  "item.more_ores.lead_pickaxe": "鉛鎬",
+  "item.more_ores.lead_axe": "鉛斧",
+  "item.more_ores.lead_hoe": "鉛鋤",
+
+  "item.more_ores.silver_helmet": "銀冑",
+  "item.more_ores.silver_chestplate": "銀鎧",
+  "item.more_ores.silver_leggings": "銀護腿",
+  "item.more_ores.silver_boots": "銀靴",
+
+  "item.minecraft.potion.effect.strengthen_fire_resistance": "強火抗劑",
+  "item.minecraft.splash_potion.effect.strengthen_fire_resistance": "強火抗噴劑",
+  "item.minecraft.lingering_potion.effect.strengthen_fire_resistance": "強火抗滯劑",
+  "item.minecraft.potion.effect.freeze": "凍劑",
+  "item.minecraft.splash_potion.effect.freeze": "凍噴劑",
+  "item.minecraft.lingering_potion.effect.freeze": "凍滯劑",
+
+  "item.more_ores.lemon_music_disc": "留聲盤",
+  "item.more_ores.lemon_music_disc.desc": "米津玄師 - Lemon",
+
+
+  "block.more_ores.atm": "取款機",
+  "block.more_ores.filler": "充器",
+  "block.more_ores.alloy_manufactory": "製合金機",
+  "block.more_ores.toughened_glass": "強琉璃",
+  "block.more_ores.silver_ore": "銀礦",
+  "block.more_ores.titanium_ore": "鈦礦",
+  "block.more_ores.lead_ore": "鉛礦",
+  "block.more_ores.charged_quartz_ore": "注能石英礦",
+  "block.more_ores.end_vibranium_ore": "終界汎礦",
+  "block.more_ores.end_aquamarine_nylium": "終界靛蕈巖",
+
+  "block.more_ores.serpentine": "蛇巖",
+  "block.more_ores.marble": "大理巖",
+
+  "block.more_ores.stone_bricks_pedestal": "巖磚座",
+  "block.more_ores.diamond_pedestal": "金剛座",
+
+  "block.more_ores.hinoki_log": "檜樁",
+  "block.more_ores.hinoki_wood": "檜木",
+  "block.more_ores.stripped_hinoki_log": "既扡檜樁",
+  "block.more_ores.stripped_hinoki_wood": "既扡檜木",
+  "block.more_ores.hinoki_planks": "檜材",
+
+
+  "tooltip.credit_card.unregistered": "未註冊",
+  "tooltip.teleport_wand.max_distance": "最大瞬距: %d",
+  "tooltip.paolyta_b.info": "除疲之效",
+
+  "tooltip.remote_control.line1": "以蹲姿對塊用以綁之",
+  "tooltip.remote_control.line2": "按 §e蹲§r 以得信也",
+  "tooltip.remote_control.shift": "綁之塊: %s",
+
+  "message.credit_card.register_owner": "已註冊此卡!",
+  "message.credit_card.has_owner": "本卡屬 %s!",
+  "message.credit_card.no_card": "持卡於手!",
+
+  "message.remote_control.bound": "已綁塊 §b%1$s§r 於 %2$s",
+  "message.remote_control.lit": "開 §b%1$s§r 於 %2$s",
+  "message.remote_control.no_lit": "關 §b%1$s§r 於 %2$s",
+
+  "message.teleport_wand.max": "最大瞬距為 %d!",
+  "message.teleport_wand.block": "欲瞬之位非氣也!",
+
+  "credit_card.rank.standard": "下品",
+  "credit_card.rank.gold": "中品",
+  "credit_card.rank.platinum": "上品",
+  "credit_card.rank.diamond": "極品",
+
+  "effect.more_ores.freeze": "凍",
+
+  "enchantment.more_ores.distance_addition": "遠",
+
+  "rei.more_ores.alloy_manufacture": "製合金",
+
+  "itemGroup.more_ores.more_ores": "更多礦",
+
+
+  "advancement.main.root.title": "更多礦",
+  "advancement.main.silver.title": "「銀」耀",
+  "advancement.main.silver.description": "得銀錠",
+  "advancement.main.charged_quartz.title": "能之源",
+  "advancement.main.charged_quartz.description": "得注能石英"
+}

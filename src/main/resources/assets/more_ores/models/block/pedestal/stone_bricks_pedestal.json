@@ -1,6 +1,7 @@
 {
   "parent": "more_ores:block/pedestal/pedestal",
   "textures": {
-    "0": "minecraft:block/stone_bricks"
+    "0": "minecraft:block/stone_bricks",
+    "particle": "minecraft:block/stone_bricks"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "CSC",
+    " B "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:blaze_powder"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "C": {
+      "item": "more_ores:compressed_sugar"
+    },
+    "B": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "result": {
+    "item": "more_ores:paolyta_b"
+  }
+}

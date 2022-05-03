@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "more_ores:charged_quartz"
+    },
+    "title": "advancement.main.charged_quartz.title",
+    "description": "advancement.main.charged_quartz.description",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "more_ores:main/silver",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "more_ores:charged_quartz"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

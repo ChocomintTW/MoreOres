@@ -1,7 +1,9 @@
 {
+  "item.more_ores.remote_control": "遙控器",
   "item.more_ores.teleport_wand": "傳送法杖",
   "item.more_ores.credit_card": "信用卡",
   "item.more_ores.lava_tank": "岩漿罐",
+  "item.more_ores.paolyta_b": "保力達 B",
 
   "item.more_ores.advanced_coal": "先進煤炭",
   "item.more_ores.silver_ingot": "銀錠",
@@ -14,6 +16,10 @@
   "item.more_ores.pierresitvia_alloy": "皮埃西維亞合金",
   "item.more_ores.reinforced_blaze_rod": "強化烈焰桿",
   "item.more_ores.glow_blaze_alloy": "烈焰螢石合金",
+
+  "item.more_ores.enderman_scrap": "終界使者碎片",
+  "item.more_ores.enderman_core": "終界使者核心",
+  "item.more_ores.teleport_core": "傳送核心",
 
   "item.more_ores.titanium_sword": "鈦劍",
   "item.more_ores.titanium_shovel": "鈦鏟",
@@ -75,10 +81,22 @@
 
   "tooltip.credit_card.unregistered": "未註冊",
   "tooltip.teleport_wand.max_distance": "最大傳送距離: %d",
+  "tooltip.paolyta_b.info": "移除挖掘疲勞效果",
+
+  "tooltip.remote_control.line1": "蹲下並對方塊使用來綁定方塊",
+  "tooltip.remote_control.line2": "按住 §eSHIFT§r 來的到更多資訊",
+  "tooltip.remote_control.shift": "綁定方塊: %s",
 
   "message.credit_card.register_owner": "你已註冊此卡!",
   "message.credit_card.has_owner": "本卡屬於 %s!",
   "message.credit_card.no_card": "將你的信用卡拿在手上!",
+
+  "message.remote_control.bound": "已綁定位於 %2$s 的 §b%1$s§r",
+  "message.remote_control.lit": "已開啟位於 %2$s 的 §b%1$s§r",
+  "message.remote_control.no_lit": "已關閉位於 %2$s 的 §b%1$s§r",
+
+  "message.teleport_wand.max": "最大傳送距離為 %d!",
+  "message.teleport_wand.block": "你想要傳送的位置不是空氣!",
 
   "credit_card.rank.standard": "一般會員",
   "credit_card.rank.gold": "黃金會員",
@@ -87,5 +105,16 @@
 
   "effect.more_ores.freeze": "冰凍",
 
-  "itemGroup.more_ores.more_ores": "更多礦物"
+  "enchantment.more_ores.distance_addition": "距離加成",
+
+  "rei.more_ores.alloy_manufacture": "合金製作",
+
+  "itemGroup.more_ores.more_ores": "更多礦物",
+
+
+  "advancement.main.root.title": "更多礦物",
+  "advancement.main.silver.title": "「銀」光閃閃",
+  "advancement.main.silver.description": "拿到銀錠",
+  "advancement.main.charged_quartz.title": "能量泉源",
+  "advancement.main.charged_quartz.description": "拿到充能石英"
 }

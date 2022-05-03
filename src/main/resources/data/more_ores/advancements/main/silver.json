@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "more_ores:silver_ingot"
+    },
+    "title": "advancement.main.silver.title",
+    "description": "advancement.main.silver.description",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "more_ores:main/root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "more_ores:silver_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

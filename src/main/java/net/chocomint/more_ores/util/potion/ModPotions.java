@@ -20,8 +20,8 @@ public class ModPotions {
 			new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, minute(12), 0),
 			new StatusEffectInstance(StatusEffects.RESISTANCE, minute(12), 2));
 
-	public static Potion FREEZE_POTION = registerPotion("freeze", new PotionRecipe(Potions.SLOWNESS, Items.BLUE_ICE),
-			new StatusEffectInstance(ModEffects.FREEZE, second(40), 1));
+//	public static Potion FREEZE_POTION = registerPotion("freeze", new PotionRecipe(Potions.SLOWNESS, Items.BLUE_ICE),
+//			new StatusEffectInstance(ModEffects.FREEZE, second(40), 1));
 
 
 	private static Potion registerPotion(String name, PotionRecipe potionRecipe, StatusEffectInstance... sei) {

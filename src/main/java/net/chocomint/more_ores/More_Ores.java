@@ -3,12 +3,14 @@ package net.chocomint.more_ores;
 import net.chocomint.more_ores.block.ModBlocks;
 import net.chocomint.more_ores.block.entity.ModBlockEntities;
 import net.chocomint.more_ores.config.ModConfigs;
+import net.chocomint.more_ores.item.ModItems;
+import net.chocomint.more_ores.recipe.ModRecipes;
+import net.chocomint.more_ores.util.ModLootTableModifiers;
+import net.chocomint.more_ores.util.ModRegistries;
 import net.chocomint.more_ores.util.atm.ATMCostJsonSerializer;
 import net.chocomint.more_ores.util.effect.ModEffects;
-import net.chocomint.more_ores.item.ModItems;
+import net.chocomint.more_ores.util.enchantment.ModEnchantments;
 import net.chocomint.more_ores.util.potion.ModPotions;
-import net.chocomint.more_ores.recipe.ModRecipes;
-import net.chocomint.more_ores.util.ModRegistries;
 import net.chocomint.more_ores.world.biome.ModBiomes;
 import net.chocomint.more_ores.world.dimension.ModDimensions;
 import net.chocomint.more_ores.world.feature.ModConfiguredFeatures;
@@ -16,8 +18,12 @@ import net.chocomint.more_ores.world.feature.ModFeatures;
 import net.chocomint.more_ores.world.gen.ModWorldGen;
 import net.chocomint.more_ores.world.structures.ModStructures;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.minecraft.util.math.Vec3d;
 
 import java.io.IOException;
+
+import static net.chocomint.more_ores.item.custom.GravityWandItem.*;
 
 //                       _oo0oo_
 //                      o8888888o
@@ -65,13 +71,10 @@ public class More_Ores implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerAllBlockEntities();
 		ModRecipes.register();
+		ModLootTableModifiers.modifyLootTables();
+		ModEnchantments.registerModEnchantments();
 
-		ModRegistries.registerModFuel();
-		ModRegistries.registerCommands();
-		ModRegistries.registerEvents();
-		ModRegistries.registerCustomTrades();
-		ModRegistries.registerStrippableBlocks();
-		ModRegistries.registerFlammableBlocks();
+		ModRegistries.registerAllRegistries();
 
 		// Potions
 		ModPotions.registerModPotions();
@@ -84,9 +87,17 @@ public class More_Ores implements ModInitializer {
 		try {
 			ATMCostJsonSerializer.init();
 			ATMCostJsonSerializer.ReadJsonIntoList();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		} catch (IOException e) { e.printStackTrace(); }
+
+//		ServerTickEvents.START_WORLD_TICK.register(serverWorld -> {
+//			if (FBE != null && PLAYER != null) {
+//				if (ON_USE) {
+//					Vec3d pos = Vec3d.fromPolar(PLAYER.getPitch(), PLAYER.getYaw()).multiply(DISTANCE).add(PLAYER.getEyePos());
+//					FBE.setNoGravity(true);
+//					FBE.setPos(pos.getX(), pos.getY(), pos.getZ());
+//				}
+//			}
+//		});
 
 		System.out.println("Hello Fabric World!");
 	}

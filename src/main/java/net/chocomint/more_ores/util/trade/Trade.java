@@ -9,9 +9,11 @@ import net.minecraft.village.VillagerProfession;
 public record Trade(VillagerProfession profession, int level, TradeOffer tradeOffer) {
 
 	public static final Trade[] ModTrades = {
-			new Trade(VillagerProfession.TOOLSMITH, 1, new TradeOffer(
-					new ItemStack(Items.EMERALD, 50),
-					new ItemStack(ModItems.LEMON_MUSIC_DISC, 1),
-					5, 5, 0.08f))
+//			new Trade(VillagerProfession.WEAPONSMITH, 3, new TradeOffer(
+//					new ItemStack(Items.EMERALD, 40),
+//					new ItemStack(Items.ENDER_PEARL, 12),
+//					new ItemStack(ModItems.TELEPORT_WAND),
+//					1, 5, 0.3f
+//			))
 	};
 }

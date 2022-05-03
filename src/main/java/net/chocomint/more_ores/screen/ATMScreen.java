@@ -43,17 +43,6 @@ public class ATMScreen extends HandledScreen<ATMScreenHandler> {
 			System.out.println("Buy!");
 			this.close();
 		}));
-//		this.nameField = new TextFieldWidget(this.textRenderer, x + 110, y + 20, 50, 16, new LiteralText("text"));
-//		this.nameField.setFocusUnlocked(false);
-//		this.nameField.setEditableColor(-1);
-//		this.nameField.setUneditableColor(-1);
-//		this.nameField.setDrawsBackground(false);
-//		this.nameField.setMaxLength(50);
-//		this.nameField.setChangedListener(this::onRenamed);
-//		this.nameField.setText("");
-//		this.addSelectableChild(this.nameField);
-//		this.setInitialFocus(this.nameField);
-//		this.nameField.setEditable(false);
 	}
 
 	private void onRenamed(String name) {

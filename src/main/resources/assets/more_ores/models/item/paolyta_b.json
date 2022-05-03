@@ -1,0 +1,111 @@
+{
+  "credit": "Made with Blockbench",
+  "textures": {
+    "0": "more_ores:item/paolyta_b",
+    "particle": "more_ores:item/paolyta_b"
+  },
+  "elements": [
+    {
+      "from": [3, 2, 3],
+      "to": [13, 17, 13],
+      "faces": {
+        "north": {"uv": [0, 7.5, 5, 15], "texture": "#0"},
+        "east": {"uv": [0, 7.5, 5, 15], "texture": "#0"},
+        "south": {"uv": [0, 7.5, 5, 15], "texture": "#0"},
+        "west": {"uv": [0, 7.5, 5, 15], "texture": "#0"},
+        "up": {"uv": [5, 0, 10, 5], "texture": "#0"},
+        "down": {"uv": [5, 0, 10, 5], "texture": "#0"}
+      }
+    },
+    {
+      "from": [4, 1, 4],
+      "to": [12, 2, 12],
+      "faces": {
+        "north": {"uv": [0.5, 15, 4.5, 15.5], "texture": "#0"},
+        "east": {"uv": [0.5, 15, 4.5, 15.5], "texture": "#0"},
+        "south": {"uv": [0.5, 15, 4.5, 15.5], "texture": "#0"},
+        "west": {"uv": [0.5, 15, 4.5, 15.5], "texture": "#0"},
+        "up": {"uv": [5, 0, 10, 5], "texture": "#0"},
+        "down": {"uv": [5, 0, 10, 5], "texture": "#0"}
+      }
+    },
+    {
+      "from": [4, 17, 4],
+      "to": [12, 18, 12],
+      "faces": {
+        "north": {"uv": [0.5, 7, 4.5, 7.5], "texture": "#0"},
+        "east": {"uv": [0.5, 7, 4.5, 7.5], "texture": "#0"},
+        "south": {"uv": [0.5, 7, 4.5, 7.5], "texture": "#0"},
+        "west": {"uv": [0.5, 7, 4.5, 7.5], "texture": "#0"},
+        "up": {"uv": [5, 0, 10, 5], "texture": "#0"},
+        "down": {"uv": [5, 0, 10, 5], "texture": "#0"}
+      }
+    },
+    {
+      "from": [5, 18, 5],
+      "to": [11, 19, 11],
+      "faces": {
+        "north": {"uv": [1, 6.5, 4, 7], "texture": "#0"},
+        "east": {"uv": [1, 6.5, 4, 7], "texture": "#0"},
+        "south": {"uv": [1, 6.5, 4, 7], "texture": "#0"},
+        "west": {"uv": [1, 6.5, 4, 7], "texture": "#0"},
+        "up": {"uv": [5, 0, 10, 5], "texture": "#0"},
+        "down": {"uv": [5, 0, 10, 5], "texture": "#0"}
+      }
+    },
+    {
+      "from": [6, 19, 6],
+      "to": [10, 30, 10],
+      "faces": {
+        "north": {"uv": [1.5, 1, 3.5, 6.5], "texture": "#0"},
+        "east": {"uv": [1.5, 1, 3.5, 6.5], "texture": "#0"},
+        "south": {"uv": [1.5, 1, 3.5, 6.5], "texture": "#0"},
+        "west": {"uv": [1.5, 1, 3.5, 6.5], "texture": "#0"},
+        "up": {"uv": [5, 0, 10, 5], "texture": "#0"},
+        "down": {"uv": [5, 0, 10, 5], "texture": "#0"}
+      }
+    },
+    {
+      "from": [5, 0, 5],
+      "to": [11, 1, 11],
+      "faces": {
+        "north": {"uv": [1, 15.5, 4, 16], "texture": "#0"},
+        "east": {"uv": [1, 15.5, 4, 16], "texture": "#0"},
+        "south": {"uv": [1, 15.5, 4, 16], "texture": "#0"},
+        "west": {"uv": [1, 15.5, 4, 16], "texture": "#0"},
+        "up": {"uv": [5, 0, 10, 5], "texture": "#0"},
+        "down": {"uv": [5, 0, 10, 5], "texture": "#0"}
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [0, -0.5, 0],
+      "scale": [0.3, 0.3, 0.3]
+    },
+    "thirdperson_lefthand": {
+      "translation": [0, -0.5, 0],
+      "scale": [0.3, 0.3, 0.3]
+    },
+    "firstperson_righthand": {
+      "translation": [0, -0.5, 0],
+      "scale": [0.3, 0.3, 0.3]
+    },
+    "firstperson_lefthand": {
+      "translation": [0, -0.5, 0],
+      "scale": [0.3, 0.3, 0.3]
+    },
+    "ground": {
+      "scale": [0.5, 0.5, 0.5]
+    },
+    "gui": {
+      "rotation": [30, 225, 0],
+      "translation": [0, -2.5, 0],
+      "scale": [0.5, 0.5, 0.5]
+    },
+    "fixed": {
+      "translation": [0, -3.5, 0],
+      "scale": [0.5, 0.5, 0.5]
+    }
+  }
+}

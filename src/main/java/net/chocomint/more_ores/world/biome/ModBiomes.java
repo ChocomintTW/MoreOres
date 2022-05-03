@@ -5,6 +5,7 @@ import net.chocomint.more_ores.block.ModBlocks;
 import net.chocomint.more_ores.world.feature.ModFeatures;
 import net.fabricmc.fabric.api.biome.v1.TheEndBiomes;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
@@ -13,6 +14,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
+import net.minecraft.world.biome.source.BiomeAccess;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.noise.NoiseParametersKeys;
@@ -69,8 +71,8 @@ public class ModBiomes {
 		Registry.register(BuiltinRegistries.BIOME, END_VIBRANIUM_PLAINS_KEY.getValue(), END_VIBRANIUM_PLAINS);
 		TheEndBiomes.addHighlandsBiome(END_VIBRANIUM_PLAINS_KEY, 1);
 
-//		SurfaceBuilder builder = new SurfaceBuilder(NoiseParametersKeys.SURFACE, ModBlocks.END_AQUAMARINE_NYLIUM.getDefaultState(),
-//				0, 66995261, ChunkRandom.RandomProvider.LEGACY);
+		SurfaceBuilder builder = new SurfaceBuilder(BuiltinRegistries.NOISE_PARAMETERS, ModBlocks.END_AQUAMARINE_NYLIUM.getDefaultState(),
+				0, 66995261, ChunkRandom.RandomProvider.LEGACY);
 
 		System.out.println("Register Mod Biomes");
 	}

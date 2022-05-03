@@ -58,7 +58,10 @@ public class ATMBlockEntity extends BlockEntity implements NamedScreenHandlerFac
 	}
 
 	public static void tick(World world, BlockPos pos, BlockState state, ATMBlockEntity entity) {
-		COST = COST_LIST.getOrDefault(ItemToKey(entity.getItems().get(0)), -1);
+		if (!world.isClient())
+		{
+			COST = COST_LIST.getOrDefault(ItemToKey(entity.getItems().get(0)), -1);
+		}
 	}
 
 	private static String ItemToKey(ItemStack item) {

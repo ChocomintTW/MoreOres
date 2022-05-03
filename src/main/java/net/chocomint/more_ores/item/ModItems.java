@@ -4,7 +4,9 @@ import net.chocomint.more_ores.More_Ores;
 import net.chocomint.more_ores.item.armors.SilverArmors;
 import net.chocomint.more_ores.item.custom.*;
 import net.chocomint.more_ores.sound.ModSounds;
+import net.chocomint.more_ores.util.effect.ModEffects;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
@@ -13,7 +15,6 @@ import net.minecraft.util.registry.Registry;
 public class ModItems {
 
 	// General Items
-
 	public static final Item LAVA_TANK = registerItem("lava_tank",
 			new ContainerItem(new FabricItemSettings().group(ModItemGroup.MORE_ORES), 20000));
 	public static final Item CREDIT_CARD = registerItem("credit_card",
@@ -21,12 +22,29 @@ public class ModItems {
 	public static final Item LEMON_MUSIC_DISC = registerItem("lemon_music_disc",
 			new ModMusicDiscItem(7, ModSounds.LEMON,
 					new FabricItemSettings().group(ModItemGroup.MORE_ORES).rarity(Rarity.RARE).maxCount(1)));
+
+	// Items
 	public static final Item ADVANCED_COAL = registerItem("advanced_coal",
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+	public static final Item COMPRESSED_SUGAR = registerItem("compressed_sugar",
+			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+	public static final Item PAOLYTA_B = registerItem("paolyta_b",
+			new PaolytaBItem(new FabricItemSettings().maxCount(1).group(ModItemGroup.MORE_ORES)));
+
+	// Tools
+	public static final Item REMOTE_CONTROL = registerItem("remote_control",
+			new RemoteControlItem(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+//	public static final Item GRAVITY_WAND = registerItem("gravity_wand",
+//			new GravityWandItem(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+
+	public static final Item ENDERMAN_SCRAP = registerItem("enderman_scrap",
+			new Item(new FabricItemSettings().maxCount(16).group(ModItemGroup.MORE_ORES)));
+	public static final Item ENDERMAN_CORE = registerItem("enderman_core",
+			new Item(new FabricItemSettings().maxCount(16).group(ModItemGroup.MORE_ORES)));
+	public static final Item TELEPORT_CORE = registerItem("teleport_core",
+			new Item(new FabricItemSettings().maxCount(16).rarity(Rarity.UNCOMMON).fireproof().group(ModItemGroup.MORE_ORES)));
 	public static final Item TELEPORT_WAND = registerItem("teleport_wand",
-			new TeleportWandItem(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
-	public static final Item GRAVITY_GUN = registerItem("gravity_gun",
-			new GravityGunItem(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+			new TeleportWandItem(new FabricItemSettings().rarity(Rarity.RARE).fireproof().group(ModItemGroup.MORE_ORES)));
 
 	/* Rseyjinecookxem
 	   Tswastandji
