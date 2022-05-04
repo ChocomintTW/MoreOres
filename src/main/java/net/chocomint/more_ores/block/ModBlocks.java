@@ -2,6 +2,7 @@ package net.chocomint.more_ores.block;
 
 import net.chocomint.more_ores.More_Ores;
 import net.chocomint.more_ores.block.custom.*;
+import net.chocomint.more_ores.fluid.ModFluids;
 import net.chocomint.more_ores.item.ModItemGroup;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -59,6 +60,11 @@ public class ModBlocks {
 	public static final Block DIAMOND_PEDESTAL = registerBlock("diamond_pedestal",
 			new PedestalBlock(FabricBlockSettings.of(Material.STONE).strength(10f)));
 
+	// Fluids
+	public static final Block RADIOACTIVE_WATER_BLOCK = registerBlock("radioactive_water_block",
+			new FluidBlock(ModFluids.RADIOACTIVE_WATER_STILL, FabricBlockSettings.of(Material.STONE)
+					.noCollision().nonOpaque().dropsNothing()));
+
 
 	// Functions
 	protected static Block registerBlock(String name, Block block) {
@@ -69,6 +75,10 @@ public class ModBlocks {
 	private static Item registerBlockItem(String name, Block block) {
 		return Registry.register(Registry.ITEM, new Identifier(More_Ores.MOD_ID, name),
 				new BlockItem(block, new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
+	}
+
+	protected static Block registerBlockWithoutItem(String name, Block block) {
+		return Registry.register(Registry.BLOCK, new Identifier(More_Ores.MOD_ID, name), block);
 	}
 
 	public static void registerModBlocks() {

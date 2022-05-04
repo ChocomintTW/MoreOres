@@ -1,13 +1,13 @@
 package net.chocomint.more_ores.item;
 
 import net.chocomint.more_ores.More_Ores;
+import net.chocomint.more_ores.fluid.ModFluids;
 import net.chocomint.more_ores.item.armors.SilverArmors;
 import net.chocomint.more_ores.item.custom.*;
 import net.chocomint.more_ores.sound.ModSounds;
-import net.chocomint.more_ores.util.effect.ModEffects;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.item.*;
+import net.minecraft.item.BucketItem;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
@@ -30,6 +30,8 @@ public class ModItems {
 			new Item(new FabricItemSettings().group(ModItemGroup.MORE_ORES)));
 	public static final Item PAOLYTA_B = registerItem("paolyta_b",
 			new PaolytaBItem(new FabricItemSettings().maxCount(1).group(ModItemGroup.MORE_ORES)));
+	public static final Item RADIOACTIVE_WATER_BUCKET = registerItem("radioactive_water_bucket",
+			new BucketItem(ModFluids.RADIOACTIVE_WATER_STILL, new FabricItemSettings().maxCount(1).group(ModItemGroup.MORE_ORES)));
 
 	// Tools
 	public static final Item REMOTE_CONTROL = registerItem("remote_control",

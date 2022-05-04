@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "more_ores:radioactive_water_still",
+    "more_ores:radioactive_water_flowing"
+  ]
+}
